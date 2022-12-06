@@ -8,6 +8,6 @@ git submodule add https://github.com/romkatv/powerlevel10k.git .oh-my-zsh/custom
 
 git config -f .gitmodules submodule.dotbot.ignore dirty
 git config -f .gitmodules submodule..oh-my-zsh/custom/plugins/nx-completion.ignore dirty
-git config -f .gitmodules submodule..oh-my-zsh/custom/plugins/zsh-autosuggestions dirty
+git config -f .gitmodules submodule..oh-my-zsh/custom/plugins/zsh-autosuggestions.ignore dirty
 git config -f .gitmodules submodule..oh-my-zsh/custom/plugins/zsh-syntax-highlighting.ignore dirty
 git config -f .gitmodules submodule..oh-my-zsh/custom/themes/powerlevel10k.ignore dirty

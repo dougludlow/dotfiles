@@ -1,8 +1,20 @@
 [submodule "dotbot"]
 	ignore = dirty
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot.git
 [submodule ".oh-my-zsh/custom/plugins/nx-completion"]
 	ignore = dirty
+	path = .oh-my-zsh/custom/plugins/nx-completion
+	url = https://github.com/jscutlery/nx-completion.git
 [submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
 	ignore = dirty
+	path = .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
+	ignore = dirty
+	path = .oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	ignore = dirty

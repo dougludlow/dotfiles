@@ -1,0 +1,8 @@
+[submodule "dotbot"]
+	ignore = dirty
+[submodule ".oh-my-zsh/custom/plugins/nx-completion"]
+	ignore = dirty
+[submodule ".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	ignore = dirty
+[submodule ".oh-my-zsh/custom/themes/powerlevel10k"]
+	ignore = dirty

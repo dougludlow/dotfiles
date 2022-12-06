@@ -1,0 +1,25 @@
+- defaults:
+    link:
+      force: true
+      relink: true
+
+- clean: ["~", "~/.oh-my-zsh/custom/", "~/.oh-my-zsh/custom/plugins/"]
+
+- shell:
+    - sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+- link:
+    ~/.editorconfig: .editorconfig
+    ~/.gitconfig: .gitconfig
+    ~/.p10k.zsh: .p10k.zsh
+    ~/.zshrc: .zshrc
+    ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh
+    ~/.oh-my-zsh/custom/exports.zsh: .oh-my-zsh/custom/exports.zsh
+    ~/.oh-my-zsh/custom/plugins/nx-completion: .oh-my-zsh/custom/plugins/nx-completion/
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: .oh-my-zsh/custom/plugins/zsh-autosuggestions/
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: .oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+    ~/.oh-my-zsh/custom/themes/powerlevel10k: .oh-my-zsh/custom/themes/powerlevel10k/
+
+- shell:
+    - rm -f ~/.zshrc.pre-oh-my-zsh*
+    - exec zsh

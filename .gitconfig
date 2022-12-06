@@ -1,0 +1,39 @@
+[user]
+	name = Doug Ludlow
+	email = doug.ludlow@gmail.com
+	signingkey = 537A8A25350FA6EB
+[core]
+	editor = vim
+	autocrlf = input
+[commit]
+	gpgsign = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[pull]
+	rebase = true
+[alias]
+	branches = branch -a
+	tags = tag
+	stashes = stash list
+	remotes = remote -v
+	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs -n 1 git branch -d && git fetch --prune"
+	unstage = reset -q HEAD --
+	discard = checkout --
+	uncommit = reset --mixed HEAD~
+	amend = commit --amend
+	fold = commit --amend --no-edit
+	nevermind = !git reset --hard HEAD && git clean -d -f
+	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	precommit = diff --cached --diff-algorithm=minimal -w
+	unmerged = diff --name-only --diff-filter=U
+[credential]
+	helper = osxkeychain
+[init]
+	defaultBranch = main
+[gpg]
+	program = gpg
+[pager]
+	branch = false

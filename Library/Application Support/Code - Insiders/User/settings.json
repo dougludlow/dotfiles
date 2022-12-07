@@ -172,6 +172,7 @@
     "terminal.integrated.env.osx": {
         "PATH": "${env:PATH}:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin"
     },
+    "git.autoRepositoryDetection": false,
     "terminal.integrated.inheritEnv": false,
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"

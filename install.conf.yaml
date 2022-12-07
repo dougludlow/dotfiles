@@ -31,6 +31,7 @@
     ~/Library/Application Support/Code - Insiders/User/settings.json: Library/Application Support/Code - Insiders/User/settings.json
 
 - shell:
+    - git submodule update --init --recursive
     - command: ./postinstall.sh
       stdout: true
       stdin: true

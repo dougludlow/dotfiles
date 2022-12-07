@@ -20,7 +20,9 @@ source $ZSH/oh-my-zsh.sh
 source <(pulumi gen-completion zsh)
 
 # SSH
-ssh-add --apple-use-keychain -q
+if [[ $OSTYPE == 'darwin'* ]]; then
+  ssh-add --apple-use-keychain -q
+fi
 
 # Add Visual Studio Code (code)
 path+="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"

@@ -169,6 +169,9 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.env.osx": {
+        "PATH": "${env:PATH}:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin"
+    },
     "terminal.integrated.inheritEnv": false,
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"

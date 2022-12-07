@@ -11,15 +11,13 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 VSCODE=code-insiders
 
-plugins=(aws brew docker git kubectl nvm nx-completion pyenv rbenv vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
+
+
+autoload -Uz compinit promptinit && compinit && promptinit
+source $ZSH/oh-my-zsh.sh
 
 source <(pulumi gen-completion zsh)
-
-fpath=(~/.zsh/completions $fpath)
-autoload -U compinit promptinit && compinit && promptinit
-zmodload -i zsh/complist
-
-source $ZSH/oh-my-zsh.sh
 
 # SSH
 ssh-add --apple-use-keychain -q
@@ -27,6 +25,18 @@ ssh-add --apple-use-keychain -q
 # Add Visual Studio Code (code)
 path+="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 export KUBE_EDITOR="code -w"
+
+# keys
+bindkey "\e\e[D" backward-word
+bindkey "\e\e[C" forward-word
+
+# aws-sso-util
+# path+="$HOME/.local/bin"
+eval "$(_AWS_SSO_UTIL_COMPLETE=source_zsh aws-sso-util)"
+export AWS_DEFAULT_SSO_START_URL=https://d-9267707003.awsapps.com/start
+export AWS_DEFAULT_SSO_REGION=us-west-2
+export AWS_SDK_LOAD_CONFIG=1
+export AWS_PROFILE=nonprod
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

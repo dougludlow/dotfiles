@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
-brew install pipx
-pipx ensurepath
-pipx install aws-sso-util
+if [ ! -f "`which aws-sso-util`" ]; then
+  echo '- installing aws-sso-util'
+  brew install pipx
+  pipx install aws-sso-util
+fi
+

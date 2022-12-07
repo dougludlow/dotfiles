@@ -9,7 +9,6 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
-VSCODE=code-insiders
 
 plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
 
@@ -25,7 +24,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
 fi
 
 # Add Visual Studio Code (code)
-path+="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+path+="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export KUBE_EDITOR="code -w"
 
 # keys

@@ -165,6 +165,7 @@
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"terminal.integrated.defaultProfile.osx": "zsh",
+	"terminal.integrated.fontFamily": "MesloLGS NF,RobotoMono Nerd Font",
 	"terminal.integrated.env.osx": {
 		"PATH": "${env:PATH}:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin"
 	},

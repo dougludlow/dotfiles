@@ -141,7 +141,6 @@
     "prettier.singleQuote": true,
     "prettier.semi": true,
     "security.workspace.trust.untrustedFiles": "open",
-    "terminal.external.osxExec": "iTerm.app",
     "terraform.languageServer": {
         "external": true
     },
@@ -167,7 +166,10 @@
     "editor.snippetSuggestions": "top",
     "editor.inlineSuggest.enabled": true,
     "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
+    "terminal.external.osxExec": "iTerm.app",
     "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.inheritEnv": false,
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
     },
@@ -178,6 +180,7 @@
         "markdown": false,
         "typescript": true
     },
+    "git.enableCommitSigning": true,
     "aws.experiments": {
         "CodeWhisperer": false
     },

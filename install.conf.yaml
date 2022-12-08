@@ -19,6 +19,7 @@
 
 - link:
     ~/.bashrc: .bashrc
+    ~/.docker/config.json: .docker/config.json
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig
     ~/.p10k.zsh: .p10k.zsh

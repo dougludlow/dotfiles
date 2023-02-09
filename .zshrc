@@ -29,15 +29,16 @@ bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
 # pulumi
-if ! command -v ws-sso-util >/dev/null 2>&1;
+if (( $+commands[pulumi] )); then
   source <(pulumi gen-completion zsh)
 fi
 
 # aws-sso-util
-if ! command -v ws-sso-util >/dev/null 2>&1;
-  path+="$HOME/.local/bin"
+path+="$HOME/.local/bin"
+if (( $+commands[aws-sso-util] )); then
   eval "$(_AWS_SSO_UTIL_COMPLETE=source_zsh aws-sso-util)"
 fi
+
 export AWS_DEFAULT_SSO_START_URL=https://d-9267707003.awsapps.com/start
 export AWS_DEFAULT_SSO_REGION=us-west-2
 export AWS_SDK_LOAD_CONFIG=1

@@ -11,6 +11,7 @@
     - ~/.oh-my-zsh/custom/themes/
     - ~/.oh-my-zsh/custom/themes/
     - ~/Library/Application Support/Code/User/
+    - ~/Library/Application Support/Code - Insiders/User/
 
 - shell:
     - command: ./preinstall.sh
@@ -30,6 +31,7 @@
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: .oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: .oh-my-zsh/custom/themes/powerlevel10k/
     ~/Library/Application Support/Code/User/settings.json: Library/Application Support/Code/User/settings.json
+    ~/Library/Application Support/Code - Insiders/User/settings.json: Library/Application Support/Code - Insiders/User/settings.json
 
 - shell:
     - git submodule update --init --recursive

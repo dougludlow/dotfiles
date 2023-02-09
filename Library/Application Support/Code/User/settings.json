@@ -41,7 +41,6 @@
 		"editor.tabSize": 2
 	},
 	"auto-rename-tag.activationOnLanguage": ["typescriptreact"],
-	"diffEditor.ignoreTrimWhitespace": false,
 	"editor.accessibilitySupport": "off",
 	"editor.bracketPairColorization.enabled": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -185,7 +184,6 @@
 	"aws.experiments": {
 		"CodeWhisperer": false
 	},
-	"window.zoomLevel": 1,
 	"dotfiles.repository": "dougludlow/dotfiles",
 	"workbench.colorTheme": "Night Owl",
 	"workbench.colorCustomizations": {
@@ -197,5 +195,6 @@
 			"sideBar.foreground": "#8BADC1"
 		}
 	},
-	"aws.telemetry": false
+	"aws.telemetry": false,
+	"window.zoomLevel": 1
 }

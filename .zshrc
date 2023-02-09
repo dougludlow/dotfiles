@@ -12,28 +12,32 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
 
-
 autoload -Uz compinit promptinit && compinit && promptinit
 source $ZSH/oh-my-zsh.sh
 
-source <(pulumi gen-completion zsh)
-
-# SSH
 if [[ $OSTYPE == 'darwin'* ]]; then
+  # SSH
   ssh-add --apple-use-keychain -q
-fi
 
-# Add Visual Studio Code (code)
-path+="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export KUBE_EDITOR="code -w"
+  # Add Visual Studio Code (code)
+  path+="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  export KUBE_EDITOR="code -w"
+fi
 
 # keys
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
+# pulumi
+if ! command -v ws-sso-util >/dev/null 2>&1;
+  source <(pulumi gen-completion zsh)
+fi
+
 # aws-sso-util
-# path+="$HOME/.local/bin"
-eval "$(_AWS_SSO_UTIL_COMPLETE=source_zsh aws-sso-util)"
+if ! command -v ws-sso-util >/dev/null 2>&1;
+  path+="$HOME/.local/bin"
+  eval "$(_AWS_SSO_UTIL_COMPLETE=source_zsh aws-sso-util)"
+fi
 export AWS_DEFAULT_SSO_START_URL=https://d-9267707003.awsapps.com/start
 export AWS_DEFAULT_SSO_REGION=us-west-2
 export AWS_SDK_LOAD_CONFIG=1

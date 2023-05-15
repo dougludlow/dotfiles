@@ -44,8 +44,8 @@
 	"editor.accessibilitySupport": "off",
 	"editor.bracketPairColorization.enabled": true,
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"editor.fontFamily": "Dank Mono,RobotoMono Nerd Font",
-	"editor.fontLigatures": true,
+	"editor.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
+	"editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss01' on, 'ss02' on, 'ss03' on, 'ss07' on, 'ss08' on, 'ss11' on",
 	"editor.fontWeight": "300",
 	"editor.formatOnSave": true,
 	"editor.minimap.enabled": true,
@@ -164,7 +164,7 @@
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.defaultProfile.linux": "zsh",
 	"terminal.integrated.defaultProfile.osx": "zsh",
-	"terminal.integrated.fontFamily": "MesloLGS NF,RobotoMono Nerd Font",
+	"terminal.integrated.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
 	"terminal.integrated.env.osx": {
 		"PATH": "${env:PATH}:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin"
 	},
@@ -175,9 +175,10 @@
 	},
 	"github.copilot.enable": {
 		"*": true,
-		"yaml": false,
+		"yaml": true,
 		"plaintext": true,
-		"markdown": false,
+		"markdown": true,
+		"scminput": false,
 		"typescript": true
 	},
 	"git.enableCommitSigning": true,
@@ -197,5 +198,6 @@
 		}
 	},
 	"aws.telemetry": false,
-	"window.zoomLevel": 0
+	"diffEditor.ignoreTrimWhitespace": false,
+	"cSpell.userWords": ["automations"]
 }

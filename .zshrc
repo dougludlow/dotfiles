@@ -20,7 +20,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   ssh-add --apple-use-keychain -q
 
   # Add Visual Studio Code (code)
-  path+="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  # path+="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  path+="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
   export KUBE_EDITOR="code -w"
 fi
 

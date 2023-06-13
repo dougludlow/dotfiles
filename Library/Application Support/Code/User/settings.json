@@ -199,5 +199,9 @@
 	},
 	"aws.telemetry": false,
 	"diffEditor.ignoreTrimWhitespace": false,
-	"cSpell.userWords": ["automations"]
+	"cSpell.userWords": ["automations"],
+	"terminal.integrated.scrollback": 10000,
+	"[sql]": {
+		"editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+	}
 }

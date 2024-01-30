@@ -140,7 +140,6 @@
 	"terraform.languageServer": {
 		"external": true
 	},
-	"workbench.activityBar.visible": true,
 	"workbench.editor.enablePreviewFromQuickOpen": false,
 	"workbench.sideBar.location": "left",
 	"workbench.startupEditor": "none",
@@ -198,10 +197,15 @@
 		}
 	},
 	"aws.telemetry": false,
-	"diffEditor.ignoreTrimWhitespace": false,
 	"cSpell.userWords": ["automations"],
 	"terminal.integrated.scrollback": 10000,
 	"[sql]": {
 		"editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-	}
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"typescript.experimental.aiQuickFix": true,
+	"[nix]": {
+		"editor.defaultFormatter": "jnoortheen.nix-ide"
+	},
+	"nxConsole.showNodeVersionOnStartup": false
 }

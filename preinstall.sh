@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
-# Check if Homebrew is installed
-# if [ ! -f "`which brew`" ]; then
-#   echo '- installing homebrew'
-#   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# else
-#   echo '- updating homebrew'
-#   brew update
-# fi
+if [[ $OSTYPE == 'darwin'* ]]; then
+  # Check if Homebrew is installed
+  if [ ! -f "`which brew`" ]; then
+    echo '- installing homebrew'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo '- updating homebrew'
+    brew update
+  fi
 
-# Install Homebrew Bundle
-# brew tap homebrew/bundle
+  # Install Homebrew Bundle
+  brew bundle
+fi
 
 # Check if oh-my-zsh is installed
 OMZDIR="$HOME/.oh-my-zsh"

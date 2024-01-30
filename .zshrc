@@ -32,6 +32,8 @@ if (( $+commands[pulumi] )); then
   source <(pulumi gen-completion zsh)
 fi
 
+export PULUMI_CONFIG_PASSPHRASE=swell
+
 # aws-sso-util
 path+="$HOME/.local/bin"
 if (( $+commands[aws-sso-util] )); then
@@ -43,6 +45,9 @@ export AWS_DEFAULT_SSO_REGION=us-west-2
 export AWS_SDK_LOAD_CONFIG=1
 export AWS_PROFILE=nonprod
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -52,3 +57,6 @@ export AWS_PROFILE=nonprod
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/Users/doug.ludlow/.bun/_bun" ] && source "/Users/doug.ludlow/.bun/_bun"

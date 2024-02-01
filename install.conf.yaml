@@ -3,6 +3,14 @@
       create: true
       force: true
       relink: true
+    brewfile:
+      stdout: false
+      stderr: false
+      include: ["tap", "brew", "cask"]
+
+- ifmacos:
+    - brewfile:
+        file: Brewfile
 
 - clean:
     - "~"
@@ -30,6 +38,7 @@
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: .oh-my-zsh/custom/plugins/zsh-autosuggestions/
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: .oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: .oh-my-zsh/custom/themes/powerlevel10k/
+    ~/Library/Application Support/iTerm2/DynamicProfiles/Default.json: Library/Application Support/iTerm2/DynamicProfiles/Default.json
     ~/Library/Application Support/Code/User/settings.json: Library/Application Support/Code/User/settings.json
     ~/Library/Application Support/Code - Insiders/User/settings.json: Library/Application Support/Code/User/settings.json
 

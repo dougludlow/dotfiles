@@ -1,7 +1,7 @@
 [user]
 	name = Doug Ludlow
 	email = doug.ludlow@gmail.com
-	signingkey = 537A8A25350FA6EB
+	signingkey = 688F84E9202AA6E9
 [core]
 	editor = vim
 	autocrlf = input
@@ -34,6 +34,6 @@
 [init]
 	defaultBranch = main
 [gpg]
-	program = gpg
+	program = /opt/homebrew/bin/gpg
 [pager]
 	branch = false

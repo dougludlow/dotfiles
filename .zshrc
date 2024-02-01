@@ -19,6 +19,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
   # SSH
   ssh-add --apple-use-keychain -q
 
+  export GPG_TTY=$(tty)
   export KUBE_EDITOR="code-insiders -w"
 fi
 
@@ -44,9 +45,6 @@ export AWS_DEFAULT_SSO_START_URL=https://d-9267707003.awsapps.com/start
 export AWS_DEFAULT_SSO_REGION=us-west-2
 export AWS_SDK_LOAD_CONFIG=1
 export AWS_PROFILE=nonprod
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -9,9 +9,6 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     echo '- updating homebrew'
     brew update
   fi
-
-  # Install Homebrew Bundle
-  brew bundle
 fi
 
 # Check if oh-my-zsh is installed

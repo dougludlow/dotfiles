@@ -18,3 +18,9 @@
 	path = .oh-my-zsh/custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	ignore = dirty
+[submodule "dotbot-ifplatform"]
+	path = dotbot-ifplatform
+	url = https://github.com/ssbanerje/dotbot-ifplatform.git
+[submodule "dotbot-brewfile"]
+	path = dotbot-brewfile
+	url = https://github.com/sobolevn/dotbot-brewfile.git

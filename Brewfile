@@ -1,8 +1,6 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 
 brew "aws-iam-authenticator"
 brew "awscli"
@@ -25,7 +23,6 @@ brew "pulumi"
 brew "pyenv"
 brew "python@3.9"
 brew "yq"
-brew "zsh"
 brew "zsh-completions"
 
 cask "1password"

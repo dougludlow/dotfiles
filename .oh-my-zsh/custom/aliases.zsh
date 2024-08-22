@@ -25,3 +25,11 @@ alias p="pulumi"
 alias pu="pulumi up"
 alias ppr="pulumi preview"
 alias pss="pulumi stack select"
+
+# code
+alias code="code-insiders"
+
+# utilities
+function killport {
+  lsof -i tcp:$1 | awk 'NR!=1 {print $2}' | xargs kill -9
+}

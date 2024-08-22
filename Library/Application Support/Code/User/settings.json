@@ -186,7 +186,6 @@
 	},
 	"dotfiles.repository": "dougludlow/dotfiles",
 	"remote.localPortHost": "allInterfaces",
-	"workbench.colorTheme": "Night Owl",
 	"workbench.colorCustomizations": {
 		"[Night Owl]": {
 			"activityBar.border": "#102a44",
@@ -200,12 +199,17 @@
 	"cSpell.userWords": ["automations"],
 	"terminal.integrated.scrollback": 10000,
 	"[sql]": {
-		"editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+		"editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
 	},
-	"diffEditor.ignoreTrimWhitespace": false,
 	"typescript.experimental.aiQuickFix": true,
 	"[nix]": {
 		"editor.defaultFormatter": "jnoortheen.nix-ide"
 	},
-	"nxConsole.showNodeVersionOnStartup": false
+	"nxConsole.showNodeVersionOnStartup": false,
+	"diffEditor.ignoreTrimWhitespace": false,
+	"prisma.showPrismaDataPlatformNotification": false,
+	"scm.showOutgoingChanges": "never",
+	"window.restoreFullscreen": true,
+	"window.newWindowDimensions": "fullscreen",
+	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml"
 }

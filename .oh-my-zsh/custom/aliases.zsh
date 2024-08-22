@@ -27,7 +27,7 @@ alias ppr="pulumi preview"
 alias pss="pulumi stack select"
 
 # code
-alias code="code-insiders"
+# alias code="code-insiders"
 
 # utilities
 function killport {

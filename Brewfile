@@ -27,7 +27,6 @@ brew "zsh-completions"
 
 cask "1password"
 cask "alfred"
-cask "avast-security"
 cask "aws-vpn-client"
 cask "docker"
 cask "dotnet-sdk"

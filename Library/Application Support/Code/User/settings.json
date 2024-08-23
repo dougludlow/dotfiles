@@ -186,6 +186,7 @@
 	},
 	"dotfiles.repository": "dougludlow/dotfiles",
 	"remote.localPortHost": "allInterfaces",
+	"workbench.colorTheme": "Night Owl",
 	"workbench.colorCustomizations": {
 		"[Night Owl]": {
 			"activityBar.border": "#102a44",
@@ -199,7 +200,7 @@
 	"cSpell.userWords": ["automations"],
 	"terminal.integrated.scrollback": 10000,
 	"[sql]": {
-		"editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+		"editor.defaultFormatter": "adpyke.vscode-sql-formatter"
 	},
 	"typescript.experimental.aiQuickFix": true,
 	"[nix]": {

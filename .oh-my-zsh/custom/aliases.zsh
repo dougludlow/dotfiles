@@ -26,6 +26,9 @@ alias pu="pulumi up"
 alias ppr="pulumi preview"
 alias pss="pulumi stack select"
 
+# pnpm 
+alias pn="pnpm"
+
 # code
 # alias code="code-insiders"
 

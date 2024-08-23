@@ -197,7 +197,6 @@
 		}
 	},
 	"aws.telemetry": false,
-	"cSpell.userWords": ["automations"],
 	"terminal.integrated.scrollback": 10000,
 	"[sql]": {
 		"editor.defaultFormatter": "adpyke.vscode-sql-formatter"
@@ -212,5 +211,6 @@
 	"scm.showOutgoingChanges": "never",
 	"window.restoreFullscreen": true,
 	"window.newWindowDimensions": "fullscreen",
-	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml"
+	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
+	"git.ignoreRebaseWarning": true
 }

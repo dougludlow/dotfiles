@@ -32,6 +32,7 @@
 	"git.enableCommitSigning": true,
 	"git.ignoreRebaseWarning": true,
 	"git.confirmSync": false,
+	"git.autofetch": true,
 
 	"gitlens.plusFeatures.enabled": false,
 

@@ -1,7 +1,10 @@
 {
 	"dotfiles.repository": "dougludlow/dotfiles",
+
 	"window.restoreFullscreen": true,
 	"window.newWindowDimensions": "fullscreen",
+
+	"workbench.colorTheme": "Winter is Coming (Dark Blue)",
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
@@ -15,19 +18,30 @@
 	"editor.formatOnSave": true,
 	"editor.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
 	"editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss01' on, 'ss02' on, 'ss03' on, 'ss07' on, 'ss08' on, 'ss11' on",
+	"editor.suggest.showMethods": true,
+	"editor.suggest.preview": true,
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.snippetSuggestions": "top",
+	"editor.inlineSuggest.enabled": true,
 
-	"workbench.colorTheme": "Winter is Coming (Dark Blue)",
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
 
 	"git.enableCommitSigning": true,
 	"git.ignoreRebaseWarning": true,
+
 	"gitlens.plusFeatures.enabled": false,
+
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"github.copilot.nextEditSuggestions.fixes": true,
-	"diffEditor.ignoreTrimWhitespace": false,
+
 	"prettier.printWidth": 120,
 	"prettier.useTabs": true,
 	"prettier.singleQuote": true,
 	"prettier.semi": true,
+
 	"[csharp]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.insertSpaces": false
@@ -65,6 +79,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.tabSize": 2
 	},
+
 	"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
 	"aws.telemetry": false,
 	"aws.experiments": {

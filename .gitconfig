@@ -17,6 +17,7 @@
 [alias]
 	branches = branch -a
 	tags = tag
+	ready = "!git stash -u && git fresh && git stash pop && git add ."
 	stashes = stash list
 	remotes = remote -v
 	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs -n 1 git branch -d && git fetch --prune"
@@ -29,6 +30,8 @@
 	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 	precommit = diff --cached --diff-algorithm=minimal -w
 	unmerged = diff --name-only --diff-filter=U
+	fresh = "!git switch main && git pull --rebase && git cleanup"
+	update = "!git pull origin main && git push -f"
 [credential]
 	helper = osxkeychain
 [init]
@@ -37,3 +40,5 @@
 	program = /opt/homebrew/bin/gpg
 [pager]
 	branch = false
+[stash]
+	showIncludeUntracked = true

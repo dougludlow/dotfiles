@@ -27,6 +27,10 @@ fi
 bindkey "\e\e[D" backward-word
 bindkey "\e\e[C" forward-word
 
+# direnv
+export DIRENV_LOG_FORMAT=""
+eval "$(direnv hook zsh)"
+
 # pulumi
 export PULUMI_SKIP_UPDATE_CHECK=true
 if (( $+commands[pulumi] )); then

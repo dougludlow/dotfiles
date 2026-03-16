@@ -11,6 +11,9 @@
 - ifmacos:
     - brewfile:
         file: Brewfile
+        no-upgrade: true
+        stdout: true
+        stderr: true
 
 - clean:
     - "~"
@@ -32,7 +35,10 @@
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig
     ~/.p10k.zsh: .p10k.zsh
+    ~/.zprofile: .zprofile
+    ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
+    ~/.config/direnv/direnv.toml: .config/direnv/direnv.toml
     ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh
     ~/.oh-my-zsh/custom/plugins/nx-completion: .oh-my-zsh/custom/plugins/nx-completion/
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: .oh-my-zsh/custom/plugins/zsh-autosuggestions/
@@ -47,4 +53,3 @@
     - command: ./postinstall.sh
       stdout: true
       stdin: true
-    - exec zsh

@@ -54,22 +54,7 @@ export AWS_PROFILE=nonprod
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-# bun completions
-[ -s "/Users/doug.ludlow/.bun/_bun" ] && source "/Users/doug.ludlow/.bun/_bun"
-
-# pnpm
-export PNPM_HOME="/Users/doug.ludlow/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 #compdef pnpm
 ###-begin-pnpm-completion-###
@@ -98,3 +83,5 @@ if type compdef &>/dev/null; then
   fi
 fi
 ###-end-pnpm-completion-###
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

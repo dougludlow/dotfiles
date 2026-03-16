@@ -14,13 +14,17 @@
 	smudge = git-lfs smudge -- %f
 [pull]
 	rebase = true
+[fetch]
+    prune = true
+[worktree]
+    guessRemote = true
 [alias]
 	branches = branch -a
 	tags = tag
 	ready = "!git stash -u && git fresh && git stash pop && git add ."
 	stashes = stash list
 	remotes = remote -v
-	cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop\\|main' | xargs -n 1 git branch -d && git fetch --prune"
+	cleanup = "!f(){\n  current=\"$(git symbolic-ref --quiet --short HEAD || true)\";\n  main_branch=\"$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed \"s#^origin/##\")\";\n  [ -z \"$main_branch\" ] && main_branch=\"main\";\n  wt_branch=\"\";\n  git_dir=\"$(git rev-parse --git-dir)\";\n  if [[ \"$git_dir\" == *\"/worktrees/\"* ]]; then\n    wt_branch=\"$(basename \"$(git rev-parse --show-toplevel)\")\";\n  fi;\n  protected=\"$(git worktree list --porcelain | awk '/^worktree /{wt=$2; sub(\".*/\", \"\", wt); if (wt != \"\" && wt !~ /^\\./) print wt} /^branch /{b=$2; sub(\"^refs/heads/\", \"\", b); if (b != \"\") print b}' | sort -u)\";\n  git for-each-ref --format=\"%(refname:short)\" --merged=HEAD refs/heads | while read -r b; do\n    [ -z \"$b\" ] && continue;\n    case \"$b\" in \"$current\"|\"$main_branch\"|\"$wt_branch\") continue ;; esac;\n    echo \"$protected\" | grep -Fxq \"$b\" && continue;\n    git branch -d \"$b\";\n  done;\n  git fetch --prune;\n}; f"
 	unstage = reset -q HEAD --
 	discard = checkout --
 	uncommit = reset --mixed HEAD~
@@ -30,7 +34,8 @@
 	graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 	precommit = diff --cached --diff-algorithm=minimal -w
 	unmerged = diff --name-only --diff-filter=U
-	fresh = "!git switch main && git pull --rebase && git cleanup"
+	home = "!f(){ target=\"main\"; git_dir=\"$(git rev-parse --git-dir)\"; if [[ \"$git_dir\" == *\"/worktrees/\"* ]]; then target=\"$(basename \"$(git rev-parse --show-toplevel)\")\"; fi; if git show-ref --verify --quiet \"refs/heads/$target\"; then git switch \"$target\"; else git switch -c \"$target\" --track origin/main; fi; }; f"
+	fresh = "!git home && git pull --rebase && git cleanup"
 	update = "!git pull origin main && git push -f"
 [credential]
 	helper = osxkeychain

@@ -4,8 +4,6 @@
 	"window.restoreFullscreen": true,
 	"window.newWindowDimensions": "fullscreen",
 
-	"workbench.colorTheme": "Winter is Coming (Dark Blue)",
-
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
@@ -16,8 +14,11 @@
 	"editor.rulers": [80, 120],
 	"editor.renderWhitespace": "all",
 	"editor.formatOnSave": true,
-	"editor.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
-	"editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss01' on, 'ss02' on, 'ss03' on, 'ss07' on, 'ss08' on, 'ss11' on",
+	// "editor.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
+	// "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss01' on, 'ss02' on, 'ss03' on, 'ss07' on, 'ss08' on, 'ss11' on",
+	"editor.fontFamily": "Maple Mono NF, Jetbrains Mono, Menlo, Consolas, monospace",
+	// "editor.fontLigatures": "'calt', 'cv01', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'zero',",
+	"editor.fontLigatures": "'calt', 'cv01', 'zero',",
 	"editor.suggest.showMethods": true,
 	"editor.suggest.preview": true,
 	"editor.acceptSuggestionOnEnter": "on",
@@ -81,10 +82,43 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.tabSize": 2
 	},
+	"[snowflake-sql]": {
+		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
+		"editor.tabSize": 2
+	},
+	"[shellscript]": {
+		"editor.defaultFormatter": "foxundermoon.shell-format",
+		"editor.tabSize": 2
+	},
 
 	"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
 	"aws.telemetry": false,
 	"aws.experiments": {
 		"CodeWhisperer": false
-	}
+	},
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.enabled": true,
+	"workbench.colorTheme": "Night Owl",
+	"database-client.autoSync": true,
+
+	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
+	"workbench.editor.empty.hint": "hidden",
+	"[sql]": {
+		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
+	},
+	"datadog.staticAnalysis.notification.suppressOnboarding": true,
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
+	"typescript.experimental.useTsgo": true,
+	"chat.tools.terminal.outputLocation": "chat",
+	"chat.viewSessions.orientation": "stacked",
+	"workbench.secondarySideBar.defaultVisibility": "visible",
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"workbench.editorAssociations": {
+		"git-rebase-todo": "default"
+	},
+	"diffEditor.hideUnchangedRegions.enabled": true,
+	"chat.viewSessions.enabled": false
 }

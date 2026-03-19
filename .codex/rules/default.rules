@@ -1,23 +1,18 @@
 prefix_rule(pattern=["./scripts/nx-agent.sh", "lint"], decision="allow")
 prefix_rule(pattern=["scripts/nx-agent.sh", "lint"], decision="allow")
-prefix_rule(
-    pattern=["./scripts/nx-agent.sh", "run"],
-    decision="allow",
-    match=[
-        "./scripts/nx-agent.sh run clients-feature-integrations-ui:tests",
-        "./scripts/nx-agent.sh run clients-feature-integrations-ui:run-tests"
-    ]
-)
-prefix_rule(
-    pattern=["scripts/nx-agent.sh", "run"],
-    decision="allow",
-    match=[
-        "scripts/nx-agent.sh run clients-feature-integrations-ui:tests",
-        "scripts/nx-agent.sh run clients-feature-integrations-ui:run-tests"
-    ]
-)
+prefix_rule(pattern=["/bin/zsh", "-lc", "./scripts/nx-agent.sh", "lint"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "scripts/nx-agent.sh", "lint"], decision="allow")
+
+prefix_rule(pattern=["./scripts/nx-agent.sh", "run"], decision="allow")
+prefix_rule(pattern=["scripts/nx-agent.sh", "run"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "./scripts/nx-agent.sh", "run"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "scripts/nx-agent.sh", "run"], decision="allow")
+
 prefix_rule(pattern=["./scripts/nx-agent.sh", "test"], decision="allow")
 prefix_rule(pattern=["scripts/nx-agent.sh", "test"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "./scripts/nx-agent.sh", "test"], decision="allow")
+prefix_rule(pattern=["/bin/zsh", "-lc", "scripts/nx-agent.sh", "test"], decision="allow")
+
 prefix_rule(pattern=["docker", "compose"], decision="allow")
 prefix_rule(pattern=["gh", "api"], decision="allow")
 prefix_rule(pattern=["gh", "pr", "create"], decision="allow")
@@ -28,11 +23,13 @@ prefix_rule(
     pattern=["git", "push"],
     decision="allow",
     match=[
+        "git push",
         "git push -u origin HEAD"
     ],
     not_match=[
         "git push -f",
         "git push --force",
+        "git push --force-with-lease",
     ]
 )
 prefix_rule(pattern=["git", "stash", "pop"], decision="allow")
@@ -41,3 +38,4 @@ prefix_rule(pattern=["git", "switch"], decision="allow")
 prefix_rule(pattern=["git", "checkout"], decision="allow")
 prefix_rule(pattern=["pnpm", "eslint"], decision="allow")
 prefix_rule(pattern=["pnpm", "jest"], decision="allow")
+prefix_rule(pattern=["pnpm", "vitest"], decision="allow")

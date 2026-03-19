@@ -119,6 +119,5 @@
 	"workbench.editorAssociations": {
 		"git-rebase-todo": "default"
 	},
-	"diffEditor.hideUnchangedRegions.enabled": true,
 	"chat.viewSessions.enabled": false
 }

@@ -1,0 +1,11 @@
+sandbox_mode = "workspace-write"
+model = "gpt-5.3-codex"
+model_reasoning_effort = "medium"
+personality = "friendly"
+
+[sandbox_workspace_write]
+writable_roots = ["/Users/doug.ludlow/Source/swell/swell-platform"]
+network_access = true
+
+[features]
+multi_agent = true

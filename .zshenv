@@ -14,3 +14,5 @@ if ! command -v pnpm >/dev/null 2>&1 && command -v corepack >/dev/null 2>&1; the
     corepack pnpm "$@"
   }
 fi
+
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"

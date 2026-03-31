@@ -85,3 +85,11 @@ fi
 ###-end-pnpm-completion-###
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Edge.js
+export EDGEJS_HOME="/Users/doug.ludlow/.edgejs"
+export PATH="/Users/doug.ludlow/.edgejs/bin:$PATH"
+
+# Wasmer
+export WASMER_DIR="/Users/doug.ludlow/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"

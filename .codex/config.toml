@@ -1,11 +1,26 @@
-sandbox_mode = "workspace-write"
 model = "gpt-5.3-codex"
-model_reasoning_effort = "medium"
 personality = "friendly"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
 
 [sandbox_workspace_write]
-writable_roots = ["/Users/doug.ludlow/Source/swell/swell-platform"]
+writable_roots = [
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/blue",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/yellow",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/orange",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/red"
+]
 network_access = true
 
 [features]
 multi_agent = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+[plugins."slack@openai-curated"]
+enabled = true

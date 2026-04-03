@@ -6,13 +6,10 @@ approval_policy = "on-request"
 
 [sandbox_workspace_write]
 writable_roots = [
+    "/Users/doug.ludlow/Library/pnpm/store/v10",
+    "/Users/doug.ludlow/.codex/worktrees",
     "/Users/doug.ludlow/Source/swell/swell-platform/.git",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/blue",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/yellow",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/orange",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.bare/worktrees/red"
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees"
 ]
 network_access = true
 
@@ -23,4 +20,16 @@ multi_agent = true
 enabled = true
 
 [plugins."slack@openai-curated"]
+enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[plugins."linear@openai-curated"]
+enabled = true
+
+[plugins."google-calendar@openai-curated"]
+enabled = true
+
+[plugins."google-drive@openai-curated"]
 enabled = true

@@ -119,5 +119,6 @@
 	"workbench.editorAssociations": {
 		"git-rebase-todo": "default"
 	},
-	"chat.viewSessions.enabled": false
+	"chat.viewSessions.enabled": false,
+	"workbench.panel.defaultLocation": "right"
 }

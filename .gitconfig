@@ -19,12 +19,19 @@
 [worktree]
     guessRemote = true
 [alias]
+	# Stash everything, freshen the checkout, then restage current changes.
 	ready = "!git stash -u && git fresh && git stash pop && git add ."
-	fresh = "!git home && git pull --rebase && git cleanup"
-	home = "!f(){ target=\"main\"; git_dir=\"$(git rev-parse --git-dir)\"; if [[ \"$git_dir\" == *\"/worktrees/\"* ]]; then target=\"$(basename \"$(git rev-parse --show-toplevel)\")\"; fi; if git show-ref --verify --quiet \"refs/heads/$target\"; then git switch \"$target\"; else git switch -c \"$target\" --track origin/main; fi; }; f"
-	cleanup = "!f(){\n  current=\"$(git symbolic-ref --quiet --short HEAD || true)\";\n  main_branch=\"$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed \"s#^origin/##\")\";\n  [ -z \"$main_branch\" ] && main_branch=\"main\";\n  wt_branch=\"\";\n  git_dir=\"$(git rev-parse --git-dir)\";\n  if [[ \"$git_dir\" == *\"/worktrees/\"* ]]; then\n    wt_branch=\"$(basename \"$(git rev-parse --show-toplevel)\")\";\n  fi;\n  protected=\"$(git worktree list --porcelain | awk '/^worktree /{wt=$2; sub(\".*/\", \"\", wt); if (wt != \"\" && wt !~ /^\\./) print wt} /^branch /{b=$2; sub(\"^refs/heads/\", \"\", b); if (b != \"\") print b}' | sort -u)\";\n  git for-each-ref --format=\"%(refname:short)\" --merged=HEAD refs/heads | while read -r b; do\n    [ -z \"$b\" ] && continue;\n    case \"$b\" in \"$current\"|\"$main_branch\"|\"$wt_branch\") continue ;; esac;\n    echo \"$protected\" | grep -Fxq \"$b\" && continue;\n    git branch -d \"$b\";\n  done;\n  git fetch --prune;\n}; f"
+	# Fetch and prune, go home, rebase main when on main, then clean merged branches.
+	fresh = "!git fetch --prune && git home && case \"$(git branch --show-current)\" in main) git pull --rebase origin main ;; esac && git cleanup"
+	# Switch home: main in the main checkout, detached main in worktrees.
+	home = "!if git rev-parse --git-path HEAD | grep -q '/worktrees/'; then git switch --detach main; else git switch main; fi"
+	# Delete merged local branches except main.
+	cleanup = "!git fetch --prune && git for-each-ref --format='%(refname:short)' --merged HEAD refs/heads | grep -vx main | xargs git branch -d"
+	# Amend the last commit without changing its message.
 	fold = commit --amend --no-edit
-	update = "!git pull origin main && git push -f"
+	# Rebase the current branch onto origin/main, then force-push it.
+	update = "!git pull origin main && git push --force-with-lease"
+	# Discard all tracked and untracked changes.
 	nevermind = !git reset --hard HEAD && git clean -d -f
 [credential]
 	helper = osxkeychain

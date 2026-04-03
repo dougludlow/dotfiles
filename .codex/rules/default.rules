@@ -2,11 +2,13 @@ prefix_rule(pattern=["docker", "compose"], decision="allow")
 prefix_rule(pattern=["gh", "api"], decision="allow")
 prefix_rule(pattern=["gh", "pr", "create"], decision="allow")
 prefix_rule(pattern=["gh", "pr", "view"], decision="allow")
+prefix_rule(pattern=["gh", "run", "view"], decision="allow")
 prefix_rule(pattern=["git", "add"], decision="allow")
 prefix_rule(pattern=["git", "checkout"], decision="allow")
 prefix_rule(pattern=["git", "commit"], decision="allow")
 prefix_rule(pattern=["git", "diff"], decision="allow")
 prefix_rule(pattern=["git", "push"], decision="allow")
+prefix_rule(pattern=["git", "push", "origin"], decision="allow")
 prefix_rule(pattern=["git", "push", "-u", "origin"], decision="allow")
 prefix_rule(
     pattern=["git", "push", ["-f", "--force", "--force-with-lease"]],

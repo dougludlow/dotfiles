@@ -16,3 +16,4 @@ if ! command -v pnpm >/dev/null 2>&1 && command -v corepack >/dev/null 2>&1; the
 fi
 
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"

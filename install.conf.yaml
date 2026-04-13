@@ -39,7 +39,7 @@
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
     ~/.codex/config.toml: .codex/config.toml
-    ~/.codex/rules/default.rules: .codex/rules/default.rules
+    ~/.codex/rules: .codex/rules
     ~/.config/direnv/direnv.toml: .config/direnv/direnv.toml
     ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh
     ~/.oh-my-zsh/custom/plugins/nx-completion: .oh-my-zsh/custom/plugins/nx-completion/

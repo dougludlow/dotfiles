@@ -1,5 +1,5 @@
 model = "gpt-5.3-codex"
-personality = "friendly"
+personality = "pragmatic"
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
@@ -8,8 +8,15 @@ approval_policy = "on-request"
 writable_roots = [
     "/Users/doug.ludlow/Library/pnpm/store/v10",
     "/Users/doug.ludlow/.codex/worktrees",
+    "/Users/doug.ludlow/.codex/worktrees/*/swell-platform",
     "/Users/doug.ludlow/Source/swell/swell-platform/.git",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees"
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform*",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform1",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform2",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform3",
+    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform4"
 ]
 network_access = true
 
@@ -22,9 +29,6 @@ enabled = true
 [plugins."slack@openai-curated"]
 enabled = true
 
-[plugins."gmail@openai-curated"]
-enabled = true
-
 [plugins."linear@openai-curated"]
 enabled = true
 
@@ -33,3 +37,31 @@ enabled = true
 
 [plugins."google-drive@openai-curated"]
 enabled = true
+
+[plugins."gmail@openai-curated"]
+enabled = true
+
+[apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
+approval_mode = "approve"
+
+[apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_save_issue"]
+approval_mode = "approve"
+
+[apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_save_comment"]
+approval_mode = "approve"
+
+[mcp_servers.nx-mcp]
+command = "npx"
+args = ["nx", "mcp"]
+
+[mcp_servers.datadog]
+url = "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?toolsets=core,alerting,apm,dashboards,error-tracking,synthetics"
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp/oauth"
+
+[projects."/Users/doug.ludlow/Source/swell/swell-platform"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/.dotfiles"]
+trust_level = "trusted"

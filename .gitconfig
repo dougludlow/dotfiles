@@ -22,7 +22,9 @@
 	# Stash everything, freshen the checkout, then restage current changes.
 	ready = "!git stash -u && git fresh && git stash pop && git add ."
 	# Fetch and prune, go home, rebase main when on main, then clean merged branches.
-	fresh = "!git fetch --prune && git home && case \"$(git branch --show-current)\" in main) git pull --rebase origin main ;; esac && git cleanup"
+	fresh = "!git fetch --prune && git home && git sync-main && git cleanup"
+	# Sync from origin/main, whether HEAD is attached or detached.
+	sync-main = "!if git symbolic-ref -q HEAD >/dev/null; then git pull --rebase origin main; else git merge --ff-only origin/main; fi"
 	# Switch home: main in the main checkout, detached main in worktrees.
 	home = "!if git rev-parse --git-path HEAD | grep -q '/worktrees/'; then git switch --detach main; else git switch main; fi"
 	# Delete merged local branches except main.

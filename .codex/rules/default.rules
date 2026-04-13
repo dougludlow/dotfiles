@@ -7,6 +7,7 @@ prefix_rule(pattern=["git", "add"], decision="allow")
 prefix_rule(pattern=["git", "checkout"], decision="allow")
 prefix_rule(pattern=["git", "commit"], decision="allow")
 prefix_rule(pattern=["git", "diff"], decision="allow")
+prefix_rule(pattern=["git", "fetch"], decision="allow")
 prefix_rule(pattern=["git", "push"], decision="allow")
 prefix_rule(pattern=["git", "push", "origin"], decision="allow")
 prefix_rule(pattern=["git", "push", "-u", "origin"], decision="allow")
@@ -15,6 +16,7 @@ prefix_rule(
     decision="prompt",
     justification="Force push requires confirmation."
 )
+prefix_rule(pattern=["git", "rebase", "origin/main"], decision="allow")
 prefix_rule(pattern=["git", "remote", "show"], decision="allow")
 prefix_rule(pattern=["git", "status"], decision="allow")
 prefix_rule(pattern=["git", "stash", "pop"], decision="allow")

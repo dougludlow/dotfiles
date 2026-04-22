@@ -8,8 +8,6 @@ brew "aws-iam-authenticator"
 brew "openssl@3"
 # Official Amazon AWS command-line interface
 brew "awscli"
-# Load/unload environment variables based on $PWD
-brew "direnv"
 # Embeddable SQL OLAP Database Management System
 brew "duckdb"
 # GitHub command-line tool
@@ -38,6 +36,8 @@ brew "kops"
 brew "kubectx"
 # Kubernetes controller and tool for one-way encrypted Secrets
 brew "kubeseal"
+# Postgres C API library
+brew "libpq"
 # Run a Kubernetes cluster locally
 brew "minikube"
 # Simple tool to make locally trusted development certificates
@@ -72,6 +72,8 @@ brew "zsh"
 brew "zsh-completions"
 # Pulumi - Modern Infrastructure as Code. Any cloud, any language 
 brew "pulumi/tap/pulumi"
+# Export photos from Apple Photos app and query the Photos database
+brew "rhettbull/osxphotos/osxphotos"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -88,6 +90,8 @@ cask "brave-browser"
 cask "bruno"
 # Terminal-based AI coding assistant
 cask "claude-code"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Voice and text chat software
@@ -108,8 +112,8 @@ cask "gimp"
 cask "google-chrome"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Remote desktop client
-cask "microsoft-remote-desktop"
+# App to manage software development and track bugs
+cask "linear-linear"
 # Native app email client for Gmail
 cask "mimestream"
 # Interactive tool for analyzing MongoDB data
@@ -126,8 +130,12 @@ cask "redis/redis/redis"
 cask "slack"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
 # Open-source code editor
 cask "visual-studio-code"
+# Open-source code editor
+cask "visual-studio-code@insiders"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 # Gecko based web browser
@@ -141,7 +149,7 @@ vscode "esbenp.prettier-vscode"
 vscode "firsttris.vscode-jest-runner"
 vscode "flesler.url-encode"
 vscode "foxundermoon.shell-format"
-vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
 vscode "gurumukhi.selected-lines-count"
 vscode "humao.rest-client"
 vscode "johnpapa.vscode-peacock"

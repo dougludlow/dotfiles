@@ -49,6 +49,7 @@
     ~/Library/Application Support/iTerm2/DynamicProfiles/Default.json: Library/Application Support/iTerm2/DynamicProfiles/Default.json
     ~/Library/Application Support/Code/User/settings.json: Library/Application Support/Code/User/settings.json
     ~/Library/Application Support/Code - Insiders/User/settings.json: Library/Application Support/Code/User/settings.json
+    ~/.vscode-insiders/extensions: ~/.vscode/extensions
 
 - shell:
     - git submodule update --init --recursive

@@ -4,6 +4,8 @@ model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
 
+notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.755/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
 [sandbox_workspace_write]
 writable_roots = [
     "/Users/doug.ludlow/Library/pnpm/store/v10",
@@ -21,7 +23,9 @@ writable_roots = [
 network_access = true
 
 [features]
+memories = true
 multi_agent = true
+default_mode_request_user_input = true
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -41,6 +45,12 @@ enabled = true
 [plugins."gmail@openai-curated"]
 enabled = true
 
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."notion@openai-curated"]
+enabled = true
+
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
 approval_mode = "approve"
 
@@ -48,6 +58,9 @@ approval_mode = "approve"
 approval_mode = "approve"
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_save_comment"]
+approval_mode = "approve"
+
+[apps.asdk_app_69c18c28f1188191bf5b8445c4ab0a2e.tools.notion_notion-update-page]
 approval_mode = "approve"
 
 [mcp_servers.nx-mcp]
@@ -65,3 +78,17 @@ trust_level = "trusted"
 
 [projects."/Users/doug.ludlow/.dotfiles"]
 trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Source/swell/infrastructure"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-04-20-can-you-enable-the-memory-feature"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Source/swell/swell-web"]
+trust_level = "trusted"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-04-22T16:52:18Z"
+source_type = "local"
+source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"

@@ -26,7 +26,7 @@
 	# Sync from origin/main, whether HEAD is attached or detached.
 	sync-main = "!if git symbolic-ref -q HEAD >/dev/null; then git pull --rebase origin main; else git merge --ff-only origin/main; fi"
 	# Switch home: main in the main checkout, detached main in worktrees.
-	home = "!if git rev-parse --git-path HEAD | grep -q '/worktrees/'; then git switch --detach main; else git switch main; fi"
+	home = "!if git rev-parse --git-path HEAD | grep -q '/worktrees/'; then git switch --detach origin/main; else git switch main; fi"
 	# Delete merged local branches except main.
 	cleanup = "!git fetch --prune && git for-each-ref --format='%(refname:short)' --merged HEAD refs/heads | grep -vx main | xargs git branch -d"
 	# Amend the last commit without changing its message.

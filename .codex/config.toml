@@ -3,6 +3,7 @@ personality = "pragmatic"
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
+approvals_reviewer = "auto_review"
 
 notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
@@ -26,6 +27,7 @@ network_access = true
 memories = true
 multi_agent = true
 default_mode_request_user_input = true
+codex_hooks = true
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -101,7 +103,7 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-23T21:13:40Z"
+last_updated = "2026-04-24T19:10:05Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 

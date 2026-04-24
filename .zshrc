@@ -15,6 +15,10 @@ plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosugge
 autoload -Uz compinit promptinit && compinit && promptinit
 source $ZSH/oh-my-zsh.sh
 
+if command -v nvm >/dev/null 2>&1; then
+  nvm use --silent >/dev/null 2>&1 || true
+fi
+
 if [[ $OSTYPE == 'darwin'* ]]; then
   # SSH
   ssh-add --apple-use-keychain -q
@@ -84,7 +88,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Edge.js
 export EDGEJS_HOME="/Users/doug.ludlow/.edgejs"
-export PATH="/Users/doug.ludlow/.edgejs/bin:$PATH"
+path+=("/Users/doug.ludlow/.edgejs/bin")
 
 # Wasmer
 export WASMER_DIR="/Users/doug.ludlow/.wasmer"

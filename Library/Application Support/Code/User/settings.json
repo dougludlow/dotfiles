@@ -4,6 +4,39 @@
 	"window.restoreFullscreen": true,
 	"window.newWindowDimensions": "fullscreen",
 
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.expand": false,
+	"explorer.fileNesting.patterns": {
+		".env": ".env.*",
+		".prettierrc": ".prettierignore",
+		".swcrc": "*.swcrc",
+		"*.ts": "${capture}.spec.ts, ${capture}.spec.tsx",
+		"*.tsx": "${capture}.spec.ts, ${capture}.spec.tsx, ${capture}.stories.tsx",
+		"AGENTS.md": "AGENTS.*.md, CLAUDE.md, GEMINI.md",
+		"base.vite.config.ts": "vitest.workspace.ts",
+		"docker-compose.yml": "docker-compose.*.yml",
+		"jest.config.cts": "jest.*.cjs",
+		"jest.config.ts": "jest.*.cjs",
+		"nx.json": ".nxignore",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, pnpm-workspace.yaml, .npmrc, .nvmrc",
+		"prisma.config.ts": "prisma-*.config.ts",
+		"settings.json": "settings.*.json",
+		"tsconfig.json": "tsconfig.*.json",
+		"vite.config.ts": "vitest.setup.ts"
+	},
+
+	"workbench.colorTheme": "Night Owl",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.editorAssociations": {
+		"git-rebase-todo": "default"
+	},
+	"workbench.panel.defaultLocation": "right",
+	"workbench.secondarySideBar.defaultVisibility": "visible",
+
+	"chat.tools.terminal.outputLocation": "chat",
+	"chat.viewSessions.orientation": "stacked",
+	"chat.viewSessions.enabled": false,
+
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": "explicit"
@@ -14,10 +47,7 @@
 	"editor.rulers": [80, 120],
 	"editor.renderWhitespace": "all",
 	"editor.formatOnSave": true,
-	// "editor.fontFamily": "MonoLisa,Symbols Nerd Font Mono",
-	// "editor.fontLigatures": "'calt' on, 'liga' on, 'zero' on, 'ss01' on, 'ss02' on, 'ss03' on, 'ss07' on, 'ss08' on, 'ss11' on",
 	"editor.fontFamily": "Maple Mono NF, Jetbrains Mono, Menlo, Consolas, monospace",
-	// "editor.fontLigatures": "'calt', 'cv01', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'ss10', 'ss11', 'zero',",
 	"editor.fontLigatures": "'calt', 'cv01', 'zero',",
 	"editor.suggest.showMethods": true,
 	"editor.suggest.preview": true,
@@ -27,8 +57,8 @@
 
 	"diffEditor.ignoreTrimWhitespace": false,
 
-	"javascript.updateImportsOnFileMove.enabled": "always",
-	"typescript.updateImportsOnFileMove.enabled": "always",
+	"js/ts.updateImportsOnFileMove.enabled": "always",
+	"js/ts.experimental.useTsgo": true,
 
 	"git.enableCommitSigning": true,
 	"git.ignoreRebaseWarning": true,
@@ -36,6 +66,8 @@
 	"git.autofetch": true,
 
 	"gitlens.plusFeatures.enabled": false,
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
 
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"github.copilot.nextEditSuggestions.fixes": true,
@@ -90,35 +122,20 @@
 		"editor.defaultFormatter": "foxundermoon.shell-format",
 		"editor.tabSize": 2
 	},
+	"[sql]": {
+		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
+	},
+	"[xml]": {
+		"editor.defaultFormatter": "redhat.vscode-xml"
+	},
 
 	"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
 	"aws.telemetry": false,
 	"aws.experiments": {
 		"CodeWhisperer": false
 	},
-	"explorer.fileNesting.expand": false,
-	"explorer.fileNesting.enabled": true,
-	"workbench.colorTheme": "Night Owl",
-	"database-client.autoSync": true,
 
-	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
-	"workbench.editor.empty.hint": "hidden",
-	"[sql]": {
-		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
-	},
 	"datadog.staticAnalysis.notification.suppressOnboarding": true,
-	"[xml]": {
-		"editor.defaultFormatter": "redhat.vscode-xml"
-	},
-	"typescript.experimental.useTsgo": true,
-	"chat.tools.terminal.outputLocation": "chat",
-	"chat.viewSessions.orientation": "stacked",
-	"workbench.secondarySideBar.defaultVisibility": "visible",
-	"gitlens.ai.model": "vscode",
-	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
-	"workbench.editorAssociations": {
-		"git-rebase-todo": "default"
-	},
-	"chat.viewSessions.enabled": false,
-	"workbench.panel.defaultLocation": "right"
+
+	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml"
 }

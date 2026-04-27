@@ -38,9 +38,8 @@
     ~/.zprofile: .zprofile
     ~/.zshenv: .zshenv
     ~/.zshrc: .zshrc
+    ~/.codex/AGENTS.md: .codex/AGENTS.md
     ~/.codex/config.toml: .codex/config.toml
-    ~/.codex/hooks.json: .codex/hooks.json
-    ~/.codex/hooks/session-start-git-fresh.sh: .codex/hooks/session-start-git-fresh.sh
     ~/.codex/rules: .codex/rules
     ~/.config/direnv/direnv.toml: .config/direnv/direnv.toml
     ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh

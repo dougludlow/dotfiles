@@ -1,6 +1,6 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.5"
+model_reasoning_effort = "high"
 personality = "pragmatic"
-model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
@@ -22,6 +22,10 @@ writable_roots = [
     "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform4"
 ]
 network_access = true
+
+[agents]
+max_threads = 6
+max_depth = 1
 
 [features]
 memories = true
@@ -103,7 +107,7 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-24T19:10:05Z"
+last_updated = "2026-04-27T16:39:03Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 

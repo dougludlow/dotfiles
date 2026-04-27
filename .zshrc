@@ -15,10 +15,6 @@ plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosugge
 autoload -Uz compinit promptinit && compinit && promptinit
 source $ZSH/oh-my-zsh.sh
 
-if command -v nvm >/dev/null 2>&1; then
-  nvm use --silent >/dev/null 2>&1 || true
-fi
-
 if [[ $OSTYPE == 'darwin'* ]]; then
   # SSH
   ssh-add --apple-use-keychain -q

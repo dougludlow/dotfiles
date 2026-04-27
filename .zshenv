@@ -16,6 +16,8 @@ path+=(
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
 	. "$NVM_DIR/nvm.sh" --no-use
+	# Prefer a local .nvmrc; nvm's auto-use checks the default alias first.
+	nvm use --silent >/dev/null 2>&1 || nvm use --silent default >/dev/null 2>&1 || true
 fi
 
 # Ensure pnpm works in both login and non-login zsh shells.

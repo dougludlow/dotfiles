@@ -1,4 +1,4 @@
-model = "gpt-5.5"
+model = "gpt-5.3-codex"
 model_reasoning_effort = "high"
 personality = "pragmatic"
 sandbox_mode = "workspace-write"
@@ -107,11 +107,11 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-27T16:39:03Z"
+last_updated = "2026-04-28T15:27:39Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-23T18:31:22Z"
+last_updated = "2026-04-27T17:31:19Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"

@@ -33,6 +33,8 @@ if (( $+commands[pulumi] )); then
   source <(pulumi gen-completion zsh)
 fi
 
+[ -f ~/.env.secrets ] && source ~/.env.secrets
+
 export PULUMI_CONFIG_PASSPHRASE=swell
 
 # aws-sso-util

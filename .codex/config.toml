@@ -57,9 +57,6 @@ enabled = true
 [plugins."notion@openai-curated"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
-enabled = true
-
 [plugins."documents@openai-primary-runtime"]
 enabled = true
 
@@ -67,6 +64,9 @@ enabled = true
 enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."browser-use@openai-bundled"]
 enabled = true
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
@@ -91,6 +91,12 @@ url = "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?toolsets=core,alert
 [mcp_servers.context7]
 url = "https://mcp.context7.com/mcp/oauth"
 
+[mcp_servers.opensearch-prod]
+command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-prod"
+
+[mcp_servers.opensearch-nonprod]
+command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-nonprod"
+
 [projects."/Users/doug.ludlow/Source/swell/swell-platform"]
 trust_level = "trusted"
 
@@ -107,11 +113,11 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-04-28T15:27:39Z"
+last_updated = "2026-05-01T15:27:03Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-04-27T17:31:19Z"
+last_updated = "2026-05-01T15:31:19Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"

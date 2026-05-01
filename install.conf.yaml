@@ -41,7 +41,7 @@
     ~/.codex/AGENTS.md: .codex/AGENTS.md
     ~/.codex/config.toml: .codex/config.toml
     ~/.codex/rules: .codex/rules
-    ~/.config/direnv/direnv.toml: .config/direnv/direnv.toml
+    ~/.config/zed/settings.json: .config/zed/settings.json
     ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh
     ~/.oh-my-zsh/custom/plugins/nx-completion: .oh-my-zsh/custom/plugins/nx-completion/
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: .oh-my-zsh/custom/plugins/zsh-autosuggestions/

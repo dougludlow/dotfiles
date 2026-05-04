@@ -4,24 +4,23 @@ personality = "pragmatic"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
+default_permissions = "workspace-git"
 
 notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
-[sandbox_workspace_write]
-writable_roots = [
-    "/Users/doug.ludlow/Library/pnpm/store/v10",
-    "/Users/doug.ludlow/.codex/worktrees",
-    "/Users/doug.ludlow/.codex/worktrees/*/swell-platform",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform*",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform1",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform2",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform3",
-    "/Users/doug.ludlow/Source/swell/swell-platform/.git/worktrees/swell-platform4"
-]
-network_access = true
+[permissions.workspace-git.filesystem]
+":root" = "read"
+":tmpdir" = "write"
+"/tmp" = "write"
+
+[permissions.workspace-git.filesystem.":project_roots"]
+"." = "write"
+".git" = "write"
+".agents" = "read"
+".codex" = "read"
+
+[permissions.workspace-git.network]
+enabled = true
 
 [agents]
 max_threads = 6
@@ -97,10 +96,10 @@ command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-prod"
 [mcp_servers.opensearch-nonprod]
 command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-nonprod"
 
-[projects."/Users/doug.ludlow/Source/swell/swell-platform"]
+[projects."/Users/doug.ludlow/.dotfiles"]
 trust_level = "trusted"
 
-[projects."/Users/doug.ludlow/.dotfiles"]
+[projects."/Users/doug.ludlow/Source/swell/swell-platform"]
 trust_level = "trusted"
 
 [projects."/Users/doug.ludlow/Source/swell/infrastructure"]

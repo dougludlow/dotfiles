@@ -6,9 +6,10 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 default_permissions = "workspace-git"
 
-notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.758/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.770/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [permissions.workspace-git.filesystem]
+glob_scan_max_depth = 3
 ":root" = "read"
 ":tmpdir" = "write"
 "/tmp" = "write"
@@ -18,6 +19,7 @@ notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1
 ".git" = "write"
 ".agents" = "read"
 ".codex" = "read"
+"**/*.env" = "none"
 
 [permissions.workspace-git.network]
 enabled = true
@@ -112,11 +114,11 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-01T15:27:03Z"
+last_updated = "2026-05-05T18:26:50Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-05-01T15:31:19Z"
+last_updated = "2026-05-05T18:31:04Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"

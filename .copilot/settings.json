@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 -c \"\nimport sys, json, re, os\ntry:\n    args = json.loads(os.environ.get('COPILOT_TOOL_INPUT', '{}'))\nexcept Exception:\n    sys.exit(0)\npath = args.get('path', args.get('file_path', args.get('filepath', '')))\nif not path:\n    sys.exit(0)\nbasename = os.path.basename(path)\npatterns = [r'^\\.env(\\..+)?$', r'.*\\.pem$', r'.*\\.key$', r'.*\\.p12$', r'^id_rsa$', r'^id_ed25519$', r'^id_dsa$', r'^id_ecdsa$']\nfor p in patterns:\n    if re.match(p, basename):\n        print(json.dumps({'permissionDecision': 'deny', 'permissionDecisionReason': f'Blocked: {basename} matches a sensitive file pattern. Ask the user to share it manually if needed.'}))\n        sys.exit(0)\n\""
+      }
+    ]
+  }
+}

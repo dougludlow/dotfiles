@@ -1,4 +1,4 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_reasoning_effort = "high"
 personality = "pragmatic"
 sandbox_mode = "workspace-write"
@@ -6,7 +6,8 @@ approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 default_permissions = "workspace-git"
 
-notify = ["/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.770/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
 [permissions.workspace-git.filesystem]
 glob_scan_max_depth = 3
@@ -32,7 +33,7 @@ max_depth = 1
 memories = true
 multi_agent = true
 default_mode_request_user_input = true
-codex_hooks = true
+hooks = true
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -67,7 +68,10 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-[plugins."browser-use@openai-bundled"]
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."chrome@openai-bundled"]
 enabled = true
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
@@ -114,12 +118,12 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-05T19:10:33Z"
+last_updated = "2026-05-18T15:58:28Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-05-05T18:31:04Z"
+last_updated = "2026-05-18T15:31:20Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 

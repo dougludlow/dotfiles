@@ -34,6 +34,7 @@ memories = true
 multi_agent = true
 default_mode_request_user_input = true
 hooks = true
+fast_mode = false
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -118,17 +119,20 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
-last_updated = "2026-05-18T15:58:28Z"
+last_updated = "2026-05-18T20:02:07Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-05-18T15:31:20Z"
+last_updated = "2026-05-18T19:55:08Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
 [tui.model_availability_nux]
 "gpt-5.5" = 2
+
+[notice]
+fast_default_opt_out = true
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"

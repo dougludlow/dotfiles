@@ -139,5 +139,7 @@
 	"datadog.staticAnalysis.notification.suppressOnboarding": true,
 
 	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
-	"security.promptForLocalFileProtocolHandling": false
+	"security.promptForLocalFileProtocolHandling": false,
+	"gitlens.launchpad.indicator.enabled": false,
+	"diffEditor.hideUnchangedRegions.enabled": true
 }

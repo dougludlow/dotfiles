@@ -1,6 +1,5 @@
 {
 	"permissions": {
-		"defaultMode": "auto",
 		"allow": [
 			"Edit",
 			"Glob",
@@ -45,7 +44,9 @@
 			"Write(**/.env*)",
 			"Write(**/secrets/**)",
 			"Write(**/.ssh/**)"
-		]
+		],
+		"defaultMode": "auto"
 	},
-	"theme": "auto"
+	"theme": "auto",
+	"skipAutoPermissionPrompt": true
 }

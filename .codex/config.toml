@@ -1,11 +1,11 @@
 model = "gpt-5.4"
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 default_permissions = "workspace-git"
-
+service_tier = "default"
 
 notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
@@ -20,7 +20,9 @@ glob_scan_max_depth = 3
 ".git" = "write"
 ".agents" = "read"
 ".codex" = "read"
-"**/*.env" = "none"
+# "**/*.env.*" = "none"
+# failed to load configuration: filesystem glob path `**/*.env.*` only supports `deny` access; use an exact path or trailing `/**` for `deny` subtree access
+
 
 [permissions.workspace-git.network]
 enabled = true
@@ -35,6 +37,7 @@ multi_agent = true
 default_mode_request_user_input = true
 hooks = true
 fast_mode = false
+js_repl = false
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -54,9 +57,6 @@ enabled = true
 [plugins."gmail@openai-curated"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
-enabled = true
-
 [plugins."notion@openai-curated"]
 enabled = true
 
@@ -67,6 +67,15 @@ enabled = true
 enabled = true
 
 [plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."datadog@openai-curated"]
 enabled = true
 
 [plugins."browser@openai-bundled"]
@@ -103,6 +112,28 @@ command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-prod"
 [mcp_servers.opensearch-nonprod]
 command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-nonprod"
 
+[mcp_servers.node_repl]
+args = []
+command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex"
+CODEX_HOME = "/Users/doug.ludlow/.codex"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "72614174f4dad67a58d46a3ac759cffb45c92fa48a293af4c4ea35102ba391ba"
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
+CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+
+[mcp_servers.swell-db-postgres-prod]
+url = "http://localhost:8000/mcp"
+
 [projects."/Users/doug.ludlow/.dotfiles"]
 trust_level = "trusted"
 
@@ -118,13 +149,16 @@ trust_level = "trusted"
 [projects."/Users/doug.ludlow/Source/swell/swell-skills"]
 trust_level = "trusted"
 
+[projects."/Users/doug.ludlow/Source/swell/database"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-05-18T20:02:07Z"
+last_updated = "2026-06-10T14:52:31Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-05-18T19:55:08Z"
+last_updated = "2026-06-02T15:31:41Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -136,3 +170,62 @@ fast_default_opt_out = true
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"
+
+[desktop]
+appearanceTheme = "system"
+appearanceLightCodeThemeId = "proof"
+appearanceDarkCodeThemeId = "github"
+usePointerCursors = true
+reviewDelivery = "inline"
+localeOverride = "en-US"
+preventSleepWhileRunning = true
+keepRemoteControlAwakeWhilePluggedIn = true
+hotkey-window-projectless-default-enabled = true
+git-always-force-push = true
+git-create-pull-request-as-draft = true
+git-pull-request-merge-method = "merge"
+git-show-sidebar-pr-icons = true
+git-commit-instructions = "Use conventional commits."
+git-pr-instructions = "Always use the $create-pr skill when creating pull requests."
+conversationDetailMode = "STEPS_COMMANDS"
+appearanceDiffMarkerStyle = "color"
+show-context-window-usage = true
+dictationDictionary = []
+
+[desktop.appearanceLightChromeTheme]
+accent = "#3d755d"
+contrast = 46
+ink = "#2f312d"
+opaqueWindows = false
+surface = "#f5f3ed"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#3d755d"
+diffRemoved = "#ba2623"
+skill = "#5f6ac2"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#1f6feb"
+contrast = 100
+ink = "#e6edf3"
+opaqueWindows = false
+surface = "#0d1117"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+code = "Maple Mono NF, Jetbrains Mono, Menlo, Consolas, monospace"
+ui = "Inter"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#3fb950"
+diffRemoved = "#f85149"
+skill = "#bc8cff"
+
+[desktop.open-in-target-preferences]
+global = "vscode"
+
+[desktop.open-in-target-preferences.perPath]
+"/Users/doug.ludlow/.dotfiles" = "vscode"
+"/Users/doug.ludlow/Source/swell/swell-platform/orange" = "vscode"
+"/Users/doug.ludlow/.codex/worktrees/6280/swell-platform" = "vscode"

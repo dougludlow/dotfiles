@@ -1,5 +1,5 @@
 model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "low"
 personality = "pragmatic"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
@@ -72,9 +72,6 @@ enabled = true
 [plugins."sites@openai-bundled"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
-enabled = true
-
 [plugins."datadog@openai-curated"]
 enabled = true
 
@@ -82,6 +79,12 @@ enabled = true
 enabled = true
 
 [plugins."chrome@openai-bundled"]
+enabled = true
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
 enabled = true
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
@@ -123,12 +126,12 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_nod
 NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex"
 CODEX_HOME = "/Users/doug.ludlow/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "72614174f4dad67a58d46a3ac759cffb45c92fa48a293af4c4ea35102ba391ba"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "27dca86fd6b571c49414a4b78e46b57bcf683a46cd1319799c11fbb6cfae3110"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.608.12217"
+BROWSER_USE_CODEX_APP_VERSION = "26.609.41114"
 CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
 
 [mcp_servers.swell-db-postgres-prod]
@@ -152,13 +155,22 @@ trust_level = "trusted"
 [projects."/Users/doug.ludlow/Source/swell/database"]
 trust_level = "trusted"
 
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-11/using-llama-cpp-how-would-i"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-11/i-want-to-run-my-mac"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-12/research-for-me-the-best-local"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-06-10T14:52:31Z"
+last_updated = "2026-06-15T15:11:39Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-02T15:31:41Z"
+last_updated = "2026-06-15T01:33:41Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -186,17 +198,19 @@ git-create-pull-request-as-draft = true
 git-pull-request-merge-method = "merge"
 git-show-sidebar-pr-icons = true
 git-commit-instructions = "Use conventional commits."
-git-pr-instructions = "Always use the $create-pr skill when creating pull requests."
+git-pr-instructions = "Use template and guidelines from the $create-pr skill when creating pull requests."
 conversationDetailMode = "STEPS_COMMANDS"
 appearanceDiffMarkerStyle = "color"
 show-context-window-usage = true
 dictationDictionary = []
+ambient-suggestions-enabled = false
+dock-icon-preference = "app-default"
 
 [desktop.appearanceLightChromeTheme]
 accent = "#3d755d"
 contrast = 46
 ink = "#2f312d"
-opaqueWindows = false
+opaqueWindows = true
 surface = "#f5f3ed"
 
 [desktop.appearanceLightChromeTheme.fonts]
@@ -210,7 +224,7 @@ skill = "#5f6ac2"
 accent = "#1f6feb"
 contrast = 100
 ink = "#e6edf3"
-opaqueWindows = false
+opaqueWindows = true
 surface = "#0d1117"
 
 [desktop.appearanceDarkChromeTheme.fonts]
@@ -229,3 +243,6 @@ global = "vscode"
 "/Users/doug.ludlow/.dotfiles" = "vscode"
 "/Users/doug.ludlow/Source/swell/swell-platform/orange" = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/6280/swell-platform" = "vscode"
+
+[sandbox_workspace_write]
+network_access = true

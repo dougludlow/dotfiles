@@ -1,30 +1,21 @@
-model = "gpt-5.4"
-model_reasoning_effort = "low"
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
 personality = "pragmatic"
-sandbox_mode = "workspace-write"
+default_permissions = "Default"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
-default_permissions = "workspace-git"
 service_tier = "default"
 
 notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
-[permissions.workspace-git.filesystem]
-glob_scan_max_depth = 3
+[permissions.Default.filesystem]
 ":root" = "read"
+":workspace_roots" = "write"
 ":tmpdir" = "write"
-"/tmp" = "write"
+":slash_tmp" = "write"
+"/Users/doug.ludlow/.config/swell/env" = "deny"
 
-[permissions.workspace-git.filesystem.":project_roots"]
-"." = "write"
-".git" = "write"
-".agents" = "read"
-".codex" = "read"
-# "**/*.env.*" = "none"
-# failed to load configuration: filesystem glob path `**/*.env.*` only supports `deny` access; use an exact path or trailing `/**` for `deny` subtree access
-
-
-[permissions.workspace-git.network]
+[permissions.Default.network]
 enabled = true
 
 [agents]
@@ -69,10 +60,16 @@ enabled = true
 [plugins."presentations@openai-primary-runtime"]
 enabled = true
 
-[plugins."sites@openai-bundled"]
+[plugins."datadog@openai-curated"]
 enabled = true
 
-[plugins."datadog@openai-curated"]
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
 enabled = true
 
 [plugins."browser@openai-bundled"]
@@ -81,10 +78,10 @@ enabled = true
 [plugins."chrome@openai-bundled"]
 enabled = true
 
-[plugins."computer-use@openai-bundled"]
+[plugins."template-creator@openai-primary-runtime"]
 enabled = true
 
-[plugins."pdf@openai-primary-runtime"]
+[plugins."visualize@openai-bundled"]
 enabled = true
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
@@ -117,25 +114,38 @@ command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-nonprod"
 
 [mcp_servers.node_repl]
 args = []
-command = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node_repl"
+command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
 NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = "/Applications/Codex.app/Contents/Resources/cua_node/lib/node_modules"
-NODE_REPL_NODE_PATH = "/Applications/Codex.app/Contents/Resources/cua_node/bin/node"
+NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex"
 CODEX_HOME = "/Users/doug.ludlow/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "27dca86fd6b571c49414a4b78e46b57bcf683a46cd1319799c11fbb6cfae3110"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,d0b55a8f9e8e7e9c88421416ea4ce9542c302abf43aa7fc871be4553ea70dd26"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
 NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.609.41114"
-CODEX_CLI_PATH = "/Applications/Codex.app/Contents/Resources/codex"
+BROWSER_USE_CODEX_APP_VERSION = "26.715.72359"
+SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/computer-use/1.0.1000451/Codex Computer Use.app"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
 [mcp_servers.swell-db-postgres-prod]
 url = "http://localhost:8000/mcp"
+enabled = true
+
+[mcp_servers.snowflake-prod]
+enabled = true
+url = "https://swellcx-prod.snowflakecomputing.com/api/v2/databases/SWELL_DATA/schemas/MCP_READONLY/mcp-servers/INTERNAL_SQL_MCP_V1"
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
 
 [projects."/Users/doug.ludlow/.dotfiles"]
 trust_level = "trusted"
@@ -164,13 +174,25 @@ trust_level = "trusted"
 [projects."/Users/doug.ludlow/Documents/Codex/2026-06-12/research-for-me-the-best-local"]
 trust_level = "trusted"
 
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-16/what-s-the-docker-command-to"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-16/give-me-a-good-icebreaker-for"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-17/in-css-when-using-flexbox-with"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-06-17/when-using-css-grid-can-i"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-06-15T15:11:39Z"
+last_updated = "2026-07-22T15:23:36Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-06-15T01:33:41Z"
+last_updated = "2026-07-16T08:31:34Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -185,8 +207,8 @@ fast_default_opt_out = true
 
 [desktop]
 appearanceTheme = "system"
-appearanceLightCodeThemeId = "proof"
-appearanceDarkCodeThemeId = "github"
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "lobster"
 usePointerCursors = true
 reviewDelivery = "inline"
 localeOverride = "en-US"
@@ -205,36 +227,40 @@ show-context-window-usage = true
 dictationDictionary = []
 ambient-suggestions-enabled = false
 dock-icon-preference = "app-default"
+followUpQueueMode = "queue"
+enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
+useFontSmoothing = false
+selected-avatar-id = "rocky"
 
 [desktop.appearanceLightChromeTheme]
-accent = "#3d755d"
+accent = "#0169cc"
 contrast = 46
-ink = "#2f312d"
+ink = "#0d0d0d"
 opaqueWindows = true
-surface = "#f5f3ed"
+surface = "#ffffff"
 
 [desktop.appearanceLightChromeTheme.fonts]
 
 [desktop.appearanceLightChromeTheme.semanticColors]
-diffAdded = "#3d755d"
-diffRemoved = "#ba2623"
-skill = "#5f6ac2"
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#1f6feb"
+accent = "#ff5c5c"
 contrast = 100
-ink = "#e6edf3"
+ink = "#e4e4e7"
 opaqueWindows = true
-surface = "#0d1117"
+surface = "#111827"
 
 [desktop.appearanceDarkChromeTheme.fonts]
 code = "Maple Mono NF, Jetbrains Mono, Menlo, Consolas, monospace"
-ui = "Inter"
+ui = "Satoshi"
 
 [desktop.appearanceDarkChromeTheme.semanticColors]
-diffAdded = "#3fb950"
-diffRemoved = "#f85149"
-skill = "#bc8cff"
+diffAdded = "#22c55e"
+diffRemoved = "#ff5c5c"
+skill = "#3b82f6"
 
 [desktop.open-in-target-preferences]
 global = "vscode"
@@ -244,5 +270,7 @@ global = "vscode"
 "/Users/doug.ludlow/Source/swell/swell-platform/orange" = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/6280/swell-platform" = "vscode"
 
-[sandbox_workspace_write]
-network_access = true
+[shell_environment_policy.set]
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "6d25aa7656feac858f3a3bdaea5bcbab0dbfd426c9de8e6931ce90c399ee8e4f,d0b55a8f9e8e7e9c88421416ea4ce9542c302abf43aa7fc871be4553ea70dd26"
+NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex"

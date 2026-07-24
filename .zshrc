@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(aws brew docker git kubectl nvm nx-completion vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(aws brew direnv docker git kubectl nvm nx-completion vscode yarn zsh-autosuggestions zsh-syntax-highlighting)
 
 autoload -Uz compinit promptinit && compinit && promptinit
 source $ZSH/oh-my-zsh.sh

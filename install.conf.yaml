@@ -38,6 +38,7 @@
     ~/.codex/AGENTS.md: .codex/AGENTS.md
     ~/.codex/config.toml: .codex/config.toml
     ~/.codex/rules: .codex/rules
+    ~/.config/direnv/config.toml: .config/direnv/config.toml
     ~/.config/zed/settings.json: .config/zed/settings.json
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig

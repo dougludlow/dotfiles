@@ -7,101 +7,102 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+	"icon_theme": "Zed (Default)",
 	"cli_default_open_behavior": "existing_window",
 	"edit_predictions": {
-		"provider": "copilot",
+		"provider": "copilot"
 	},
 	"agent_servers": {
 		"codex-acp": {
-			"type": "registry",
-		},
+			"type": "registry"
+		}
 	},
 	"project_panel": {
-		"dock": "left",
+		"dock": "left"
 	},
 	"outline_panel": {
-		"dock": "left",
+		"dock": "left"
 	},
 	"collaboration_panel": {
-		"dock": "left",
+		"dock": "left"
 	},
 	"agent": {
 		"dock": "right",
 		"favorite_models": [],
-		"model_parameters": [],
+		"model_parameters": []
 	},
 	"git_panel": {
-		"dock": "left",
+		"dock": "left"
 	},
 	"ui_font_size": 14,
 	"buffer_font_size": 14.0,
 	"theme": {
-		"mode": "system",
+		"mode": "light",
 		"light": "One Light",
-		"dark": "Ayu Dark",
+		"dark": "Ayu Dark"
 	},
 	"buffer_font_family": "Maple Mono NF",
 	"terminal": {
 		"font_fallbacks": ["Maple Mono NF"],
-		"font_size": 12,
+		"font_size": 12
 	},
 	"hard_tabs": true,
 	"tab_size": 4,
 	"languages": {
 		"JavaScript": {
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true,
+				"source.fixAll.eslint": true
 			},
 			"formatter": {
 				"external": {
 					"command": "prettier",
-					"arguments": ["--stdin-filepath", "{buffer_path}"],
-				},
-			},
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
 		},
 		"TypeScript": {
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true,
+				"source.fixAll.eslint": true
 			},
 			"formatter": {
 				"external": {
 					"command": "prettier",
-					"arguments": ["--stdin-filepath", "{buffer_path}"],
-				},
-			},
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
 		},
 		"TSX": {
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true,
+				"source.fixAll.eslint": true
 			},
 			"formatter": {
 				"external": {
 					"command": "prettier",
-					"arguments": ["--stdin-filepath", "{buffer_path}"],
-				},
-			},
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
 		},
 		"JSON": {
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true,
+				"source.fixAll.eslint": true
 			},
 			"formatter": {
 				"external": {
 					"command": "prettier",
-					"arguments": ["--stdin-filepath", "{buffer_path}"],
-				},
-			},
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
 		},
 		"JSONC": {
 			"code_actions_on_format": {
-				"source.fixAll.eslint": true,
+				"source.fixAll.eslint": true
 			},
 			"formatter": {
 				"external": {
 					"command": "prettier",
-					"arguments": ["--stdin-filepath", "{buffer_path}"],
-				},
-			},
-		},
-	},
+					"arguments": ["--stdin-filepath", "{buffer_path}"]
+				}
+			}
+		}
+	}
 }

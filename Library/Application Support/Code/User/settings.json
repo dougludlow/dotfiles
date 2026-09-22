@@ -67,8 +67,6 @@
 	"git.autofetch": true,
 
 	"gitlens.plusFeatures.enabled": false,
-	"gitlens.ai.model": "vscode",
-	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
 
 	"github.copilot.nextEditSuggestions.enabled": true,
 	"github.copilot.nextEditSuggestions.fixes": true,
@@ -140,5 +138,6 @@
 
 	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
 	"security.promptForLocalFileProtocolHandling": false,
-	"gitlens.launchpad.indicator.enabled": false
+	"gitlens.launchpad.indicator.enabled": false,
+	"snowflake.autoLoginOnActivation.enabled": false
 }

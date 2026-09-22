@@ -1,25 +1,22 @@
-model = "gpt-5.6-terra"
-model_reasoning_effort = "medium"
+model = "gpt-6-astra"
+model_reasoning_effort = "xhigh"
 personality = "pragmatic"
-# default_permissions = "Default"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
 service_tier = "default"
 
 notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
-# [permissions.Default.filesystem]
-# ":root" = "read"
-# ":workspace_roots" = "write"
-# ":tmpdir" = "write"
-# ":slash_tmp" = "write"
-# "/Users/doug.ludlow/.config/swell/env" = "deny"
+# --- Headroom persistent provider ---
+model_provider = "headroom"
+openai_base_url = "http://127.0.0.1:8787/v1"
 
-# [permissions.Default.workspace_roots]
-# "/Users/doug.ludlow/Source/swell/swell-platform/.git" = true
-
-# [permissions.Default.network]
-# enabled = true
+[model_providers.headroom]
+name = "Headroom persistent proxy"
+base_url = "http://127.0.0.1:8787/v1"
+supports_websockets = true
+requires_openai_auth = true
+# --- end Headroom persistent provider ---
 
 [agents]
 max_depth = 1
@@ -31,6 +28,9 @@ default_mode_request_user_input = true
 hooks = true
 fast_mode = false
 js_repl = false
+
+[features.context_management]
+experimental_mode = true
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -71,9 +71,6 @@ enabled = true
 [plugins."pdf@openai-primary-runtime"]
 enabled = true
 
-[plugins."sites@openai-bundled"]
-enabled = true
-
 [plugins."browser@openai-bundled"]
 enabled = true
 
@@ -84,6 +81,12 @@ enabled = true
 enabled = true
 
 [plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."unified-computer-use@openai-bundled"]
 enabled = true
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c.tools."linear mcp server_research"]
@@ -125,23 +128,28 @@ NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_n
 NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
 NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
 CODEX_HOME = "/Users/doug.ludlow/.codex"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "091a81603ff202a16ed56557709bf42d97caf8f0dd2e07ae9e26d7c014d71035"
 BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
+BROWSER_USE_TINYSKY_ENABLED = "1"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
+NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.730.61639"
+BROWSER_USE_CODEX_APP_VERSION = "26.915.31945"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.915.31945/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
 
-[mcp_servers.swell-db-postgres-prod]
-url = "http://localhost:8000/mcp"
-enabled = true
+[mcp_servers.postgres_mcp]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb1"]
 
-[mcp_servers.snowflake-prod]
-enabled = true
-url = "https://swellcx-prod.snowflakecomputing.com/api/v2/databases/SWELL_DATA/schemas/MCP_READONLY/mcp-servers/INTERNAL_SQL_MCP_V1"
+[mcp_servers.postgres_mcp_survey]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb2"]
+
+[mcp_servers.snowflake]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb3"]
 
 [mcp_servers.computer-use]
 command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
@@ -197,13 +205,23 @@ trust_level = "trusted"
 [projects."/Users/doug.ludlow/Documents/Codex/2026-08-05/hepl"]
 trust_level = "trusted"
 
+[projects."/Users/doug.ludlow/Documents/Codex/2026-08-14/realtime-voice-chat"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-08-14/i"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-08-29/when-x20"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Documents/Codex/2026-09-02/com"]
+trust_level = "trusted"
+
 [marketplaces.openai-bundled]
-last_updated = "2026-08-05T18:56:04Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.codex/.tmp/bundled-marketplaces/openai-bundled"
 
 [marketplaces.openai-primary-runtime]
-last_updated = "2026-08-06T03:34:18Z"
 source_type = "local"
 source = "/Users/doug.ludlow/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
 
@@ -242,6 +260,7 @@ followUpQueueMode = "queue"
 enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
 useFontSmoothing = false
 selected-avatar-id = "rocky"
+worktree-upstream-refresh-mode = "best-effort"
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"
@@ -276,12 +295,6 @@ skill = "#3b82f6"
 [desktop.open-in-target-preferences]
 global = "vscode"
 
-[desktop.open-in-target-preferences.perPath]
-"/Users/doug.ludlow/.dotfiles" = "vscode"
-"/Users/doug.ludlow/Source/swell/swell-platform/orange" = "vscode"
-"/Users/doug.ludlow/.codex/worktrees/6280/swell-platform" = "vscode"
 
 [shell_environment_policy.set]
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "091a81603ff202a16ed56557709bf42d97caf8f0dd2e07ae9e26d7c014d71035"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/doug.ludlow/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
+NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"

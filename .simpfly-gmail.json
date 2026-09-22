@@ -1,0 +1,81 @@
+{
+	"version": "3.4.9",
+	"exportDate": "2026-08-19T16:47:58.329Z",
+	"simplifyPrefs": {
+		"1950132262": {
+			"myEmail": "doug@swellcx.com",
+			"state": {
+				"themeBgImgUrl": "",
+				"navOpen": false,
+				"textButtons": false,
+				"themeBgColor": "rgb(255, 255, 255)",
+				"customKbs": true,
+				"themeBgImg": "150px bottom / contain no-repeat url(https://ssl.gstatic.com/ui/v1/icons/mail/themes/gizmos/footer_default.png) rgb(246, 248, 252)",
+				"readingPaneWidth": "var(--content-width)",
+				"sendArchive": false,
+				"addOnsOpen": false,
+				"inboxHidden": false,
+				"lightTheme": "basicwhite",
+				"coreKbs": false,
+				"readingPane": true,
+				"themeBgImgPos": "",
+				"theme": "defaultTheme",
+				"density": "lowDensity",
+				"readingPaneSize": "854.5px",
+				"extensions": null,
+				"readingPaneType": "vPane",
+				"firstReminder": false,
+				"autoAdvance": "0"
+			},
+			"savedSearchesTop": {
+				"Archived": true,
+				"Attachments": true,
+				"Purchases": true
+			}
+		},
+		"shared": {
+			"inboxZeroHideLink": true,
+			"hidePromos": true,
+			"hideGemini": "hide",
+			"hideFlows": "hide",
+			"hideAddOnsWhen": "always",
+			"avatars": true
+		},
+		"_nonce": "ff944da6-4c05-4134-a3fd-65342e1e1881",
+		"delegates": {
+			"doNotShow": {
+				"firstTimeWelcome": true
+			}
+		},
+		"ids": [1950132262]
+	},
+	"simplifyAvatars": {
+		"1950132262": {
+			"images": {},
+			"metadata": {
+				"1453667294": {
+					"lastSeen": 1787157845871,
+					"size": 95
+				},
+				"4159651823": {
+					"lastSeen": 1776363260912,
+					"size": 106
+				}
+			},
+			"urls": {
+				"1453667294": "lh:/cm/AGPWSu_oQs9pdqwJ1HuWz0eghnKc2hAXf4GWMtM6srJQRHc5ggfc5c_JTpDJT1K4fOAYn6zfLg=s80-p-k-rw-no",
+				"4159651823": "lh:/a-/ALV-UjUsy4MPd7LRZ5j1_enpf1Az0n784Od2ciPepd5EsA-UvfkDPjE=s80-p-k-rw-no"
+			}
+		},
+		"_unmapped": {
+			"images": {},
+			"metadata": {},
+			"urls": {}
+		},
+		"shared": {
+			"images": {},
+			"urls": {}
+		},
+		"_nonce": "ee2a726d-5fa7-4422-912a-772cc30047fd"
+	}
+}

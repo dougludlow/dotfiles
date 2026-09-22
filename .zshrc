@@ -91,3 +91,6 @@ path+=("/Users/doug.ludlow/.edgejs/bin")
 # Wasmer
 export WASMER_DIR="/Users/doug.ludlow/.wasmer"
 [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+
+# opencode
+export PATH=/Users/doug.ludlow/.opencode/bin:$PATH

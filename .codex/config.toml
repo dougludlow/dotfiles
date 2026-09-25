@@ -242,6 +242,7 @@ useFontSmoothing = false
 selected-avatar-id = "rocky"
 worktree-upstream-refresh-mode = "best-effort"
 defaultTerminalLocation = "right"
+sidebar-show-projects-in-recents = false
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"

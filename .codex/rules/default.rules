@@ -2,19 +2,23 @@ prefix_rule(pattern=["docker", "compose"], decision="allow")
 prefix_rule(pattern=["gh", "api"], decision="allow")
 prefix_rule(pattern=["gh", "pr", "create"], decision="allow")
 prefix_rule(pattern=["gh", "pr", "view"], decision="allow")
+prefix_rule(pattern=["gh", "pr", "diff"], decision="allow")
 prefix_rule(pattern=["gh", "run", "view"], decision="allow")
+prefix_rule(pattern=["gh", "run", "list"], decision="allow")
 prefix_rule(pattern=["git", "add"], decision="allow")
-prefix_rule(pattern=["git", "checkout"], decision="allow")
 prefix_rule(pattern=["git", "commit"], decision="allow")
 prefix_rule(pattern=["git", "diff"], decision="allow")
 prefix_rule(pattern=["git", "fetch"], decision="allow")
 prefix_rule(pattern=["git", "push"], decision="allow")
-prefix_rule(pattern=["git", "push", "origin"], decision="allow")
-prefix_rule(pattern=["git", "push", "-u", "origin"], decision="allow")
 prefix_rule(
-    pattern=["git", "push", ["-f", "--force", "--force-with-lease"]],
+    pattern=["git", "push", ["-f", "--force", "--force-with-lease", "-d", "--delete", "--mirror", "--prune"]],
     decision="prompt",
-    justification="Force push requires confirmation."
+    justification="Force pushes and remote branch deletion require confirmation."
+)
+prefix_rule(
+    pattern=["git", "push", "origin", ["-f", "--force", "--force-with-lease", "-d", "--delete", "--mirror", "--prune"]],
+    decision="prompt",
+    justification="Force pushes and remote branch deletion require confirmation."
 )
 prefix_rule(pattern=["git", "rebase", "origin/main"], decision="allow")
 prefix_rule(pattern=["git", "remote", "show"], decision="allow")
@@ -22,7 +26,14 @@ prefix_rule(pattern=["git", "status"], decision="allow")
 prefix_rule(pattern=["git", "stash", "pop"], decision="allow")
 prefix_rule(pattern=["git", "stash", "push"], decision="allow")
 prefix_rule(pattern=["git", "switch"], decision="allow")
-prefix_rule(pattern=["git", "switch", "-c"], decision="allow")
 prefix_rule(pattern=["git", "rev-parse"], decision="allow")
+prefix_rule(pattern=["git", "worktree", "add"], decision="allow")
 prefix_rule(pattern=["rg"], decision="allow")
 prefix_rule(pattern=["kubectl", "get", "deployments"], decision="allow")
+prefix_rule(pattern=["kubectl", ["--context=nonprod", "--context=prod"], ["get", "describe", "logs"]], decision="allow")
+prefix_rule(pattern=["kubectl", "--context", ["nonprod", "prod"], ["get", "describe", "logs"]], decision="allow")
+prefix_rule(pattern=["aws", "sts", "get-caller-identity"], decision="allow")
+prefix_rule(pattern=["aws", "s3api", ["list-objects-v2", "head-object"]], decision="allow")
+prefix_rule(pattern=["aws", "s3api", "get-object", "--bucket", "swell-pulumi-state-195969062870"], decision="allow")
+prefix_rule(pattern=["aws", "elbv2", ["describe-target-groups", "describe-target-health", "describe-load-balancers"]], decision="allow")
+prefix_rule(pattern=["pulumi", "preview"], decision="allow")

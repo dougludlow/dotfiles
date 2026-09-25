@@ -1,4 +1,4 @@
-model = "gpt-6-astra"
+model = "gpt-6-sol"
 model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 approval_policy = "on-request"
@@ -23,14 +23,8 @@ max_depth = 1
 
 [features]
 memories = true
-multi_agent = true
 default_mode_request_user_input = true
-hooks = true
-fast_mode = false
-js_repl = false
-
-[features.context_management]
-experimental_mode = true
+workspace_dependencies = true
 
 [plugins."github@openai-curated"]
 enabled = true
@@ -117,6 +111,48 @@ command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-prod"
 [mcp_servers.opensearch-nonprod]
 command = "/Users/doug.ludlow/.local/bin/opensearch-mcp-server-codex-nonprod"
 
+[mcp_servers.workpane_local_main]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "ce2fb4a6-7e51-4fad-89e6-6bac4c147ce3"]
+
+[mcp_servers.workpane_local_snowflake]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "bd9da37e-8f86-494b-8a1b-d957e90a0baf"]
+
+[mcp_servers.workpane_local_survey]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "470f965f-317d-47e2-a1ea-7c5679217bb7"]
+
+[mcp_servers.workpane_production_main]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "f47be385-57f3-4439-8431-b9f4b974a10c"]
+
+[mcp_servers.workpane_production_snowflake]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "cf1833bc-ccd6-42e8-b64b-b1477d5a628f"]
+
+[mcp_servers.workpane_production_survey]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "74d393ee-92dd-42a2-b8c1-b5036dbc2ac6"]
+
+[mcp_servers.workpane_sandbox_main]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "8e2ea67b-7d90-4b2a-a9cd-ed388aed8314"]
+
+[mcp_servers.workpane_sandbox_snowflake]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "b7f21f5e-bdde-4547-9bf9-d290efd56121"]
+
+[mcp_servers.workpane_sandbox_survey]
+command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
+args = ["--connection", "400deeb0-88f0-46d8-a64e-a300dc1c6cce"]
+
+[mcp_servers.computer-use]
+command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
+args = ["mcp"]
+cwd = "."
+enabled = false
+
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
@@ -134,28 +170,11 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.915.31945"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.915.31945/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.924.20706"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.924.20706/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
+CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
-[mcp_servers.postgres_mcp]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb1"]
-
-[mcp_servers.postgres_mcp_survey]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb2"]
-
-[mcp_servers.snowflake]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "831745b2-380f-430c-a03a-8bd851503bb3"]
-
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
 
 [projects."/Users/doug.ludlow/.dotfiles"]
 trust_level = "trusted"
@@ -175,46 +194,7 @@ trust_level = "trusted"
 [projects."/Users/doug.ludlow/Source/swell/database"]
 trust_level = "trusted"
 
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-11/using-llama-cpp-how-would-i"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-11/i-want-to-run-my-mac"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-12/research-for-me-the-best-local"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-16/what-s-the-docker-command-to"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-16/give-me-a-good-icebreaker-for"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-17/in-css-when-using-flexbox-with"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-06-17/when-using-css-grid-can-i"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-07-23/what"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-08-05/help"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-08-05/hepl"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-08-14/realtime-voice-chat"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-08-14/i"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-08-29/when-x20"]
-trust_level = "trusted"
-
-[projects."/Users/doug.ludlow/Documents/Codex/2026-09-02/com"]
+[projects."/Users/doug.ludlow/Source/swell/workpane"]
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
@@ -261,6 +241,7 @@ enabled-reasoning-efforts = ["low", "medium", "high", "xhigh"]
 useFontSmoothing = false
 selected-avatar-id = "rocky"
 worktree-upstream-refresh-mode = "best-effort"
+defaultTerminalLocation = "right"
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"
@@ -294,7 +275,6 @@ skill = "#3b82f6"
 
 [desktop.open-in-target-preferences]
 global = "vscode"
-
 
 [shell_environment_policy.set]
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"

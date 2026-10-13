@@ -1,6 +1,6 @@
 ## Subagent preferences
 
-When using subagents, prefer gpt-6-luna with xhigh reasoning effort (Extra High) whenever available and suitable for the task. Use a more capable model when the task requires it.
+When using subagents, prefer the latest available GPT Luna model suitable for the task. Resolve its exact model ID from the runtime's available model list and use xhigh reasoning effort (Extra High) when supported. Use a more capable model when the task requires it.
 
 ## Branch Naming
 
@@ -9,6 +9,8 @@ Always use a descriptive git branch name: `{feat|fix|chore}/se-XXXX-short-slug` 
 ## Pull Requests
 
 Always use the /create-pr skill when creating pull requests. Never mark a pull request ready for review without my explicit approval. Open PRs as drafts and leave them as drafts. Completed work, green CI, and a clean self-review are not permission to mark it ready. Only an explicit instruction from me in the current conversation is. If you believe a PR is ready, say so and let me flip it myself.
+
+Comment with `@codex review` after creating the draft pull request to trigger a code review.
 
 ## Conventional Commits
 

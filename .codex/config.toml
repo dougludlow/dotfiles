@@ -10,8 +10,6 @@ notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Content
 # --- Headroom persistent provider ---
 model_provider = "headroom"
 openai_base_url = "http://127.0.0.1:8787/v1"
-model_reasoning_summary = "detailed"
-model_verbosity = "high"
 
 [model_providers.headroom]
 name = "Headroom persistent proxy"
@@ -139,6 +137,7 @@ args = ["--connection", "f47be385-57f3-4439-8431-b9f4b974a10c"]
 [mcp_servers.workpane_production_snowflake]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
 args = ["--connection", "cf1833bc-ccd6-42e8-b64b-b1477d5a628f"]
+enabled = true
 
 [mcp_servers.workpane_production_survey]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
@@ -180,8 +179,8 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.1007.30912"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1007.30912/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.1007.71326"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1007.71326/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
@@ -208,6 +207,9 @@ trust_level = "trusted"
 trust_level = "trusted"
 
 [projects."/Users/doug.ludlow/Source/swell/swell-pms"]
+trust_level = "trusted"
+
+[projects."/Users/doug.ludlow/Source/dougludlow/skills"]
 trust_level = "trusted"
 
 [marketplaces.openai-bundled]
@@ -259,6 +261,8 @@ sidebar-show-projects-in-recents = false
 default-workspace-full-view = false
 pagesFullWidth = false
 agent-usage-reset-enabled = true
+code-review-github-link-target = "code-review-tab"
+code-review-local-instructions = "Ensure changes are consistent with AGENTS.md and our policies."
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"
@@ -296,6 +300,7 @@ global = "vscode"
 [desktop.open-in-target-preferences.perPath]
 "/Users/doug.ludlow/.codex/worktrees/40f9/swell-platform" = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/e66c/swell-platform" = "vscode"
+"/Users/doug.ludlow/.codex/worktrees/10c6/swell-platform" = "vscode"
 
 [shell_environment_policy.set]
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"

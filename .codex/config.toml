@@ -1,5 +1,6 @@
+default_permissions = "Default"
 model = "gpt-6.1-sol"
-model_reasoning_effort = "xhigh"
+model_reasoning_effort = "medium"
 personality = "pragmatic"
 approval_policy = "on-request"
 approvals_reviewer = "auto_review"
@@ -22,6 +23,7 @@ requires_openai_auth = true
 max_depth = 1
 
 [features]
+network_proxy = true
 memories = true
 default_mode_request_user_input = true
 workspace_dependencies = true
@@ -165,6 +167,7 @@ enabled = true
 [mcp_servers.node_repl]
 args = []
 command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
+env_vars = ["BROWSER_USE_ACCESS_EXECUTOR_ID", "BROWSER_USE_ACCESS_PIPE_PATH", "BROWSER_USE_ACCESS_VERIFYING_IDENTITY"]
 startup_timeout_sec = 120
 
 [mcp_servers.node_repl.env]
@@ -179,8 +182,8 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.1007.71326"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1007.71326/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.1016.51333"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1016.51333/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
@@ -301,10 +304,61 @@ global = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/40f9/swell-platform" = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/e66c/swell-platform" = "vscode"
 "/Users/doug.ludlow/.codex/worktrees/10c6/swell-platform" = "vscode"
+"/Users/doug.ludlow/.codex/worktrees/8bac/swell-platform" = "vscode"
 
 [shell_environment_policy.set]
+TMPDIR = "/private/tmp"
 NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"
 
 [[skills.config]]
 path = "/Users/doug.ludlow/.codex/skills/hatch-pet/SKILL.md"
 enabled = false
+
+[permissions.Default]
+extends = ":workspace"
+
+[permissions.Default.network]
+enabled = true
+allow_local_binding = true
+
+[permissions.Default.network.domains]
+"127.0.0.1" = "allow"
+"::1" = "allow"
+"agency.swellcx.localhost" = "allow"
+"api.github.com" = "allow"
+"binaries.prisma.sh" = "allow"
+"codeload.github.com" = "allow"
+"developers.openai.com" = "allow"
+"github.com" = "allow"
+"host.docker.internal" = "allow"
+"learn.chatgpt.com" = "allow"
+"localhost" = "allow"
+"nodejs.org" = "allow"
+"objects.githubusercontent.com" = "allow"
+"platform.openai.com" = "allow"
+"raw.githubusercontent.com" = "allow"
+"registry.npmjs.org" = "allow"
+"release-assets.githubusercontent.com" = "allow"
+"sqs.us-west-2.localhost.localstack.cloud" = "allow"
+"survey.swellcx.localhost" = "allow"
+"swellcx.localhost" = "allow"
+
+[permissions.Default.network.unix_sockets]
+"/var/run/com.apple.launchd.cqEESLJyGT/Listeners" = "allow"
+"/private/tmp/tsx-502" = "allow"
+"/Users/doug.ludlow/Source/swell/swell-platform/.git/fsmonitor--daemon.ipc" = "allow"
+"/Users/doug.ludlow/.orbstack/run/docker.sock" = "allow"
+
+[permissions.Default.filesystem.":workspace_roots"]
+".git" = "write"
+
+[permissions.Default.filesystem]
+"/Users/doug.ludlow/.npm/_cacache" = "write"
+"/Users/doug.ludlow/.npm/_logs" = "write"
+"/Users/doug.ludlow/Library/Caches/pnpm" = "write"
+"/Users/doug.ludlow/Library/pnpm/store" = "write"
+"/Users/doug.ludlow/Source/swell/swell-platform/.git" = "write"
+"/Users/doug.ludlow/Source/swell/swell-web/.git" = "write"
+"/Users/doug.ludlow/Source/swell/infrastructure/.git" = "write"
+"/Users/doug.ludlow/Source/swell/database/.git" = "write"
+"/Users/doug.ludlow/Source/swell/swell-skills/.git" = "write"

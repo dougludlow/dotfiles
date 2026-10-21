@@ -10,7 +10,9 @@ Always use a descriptive git branch name: `{feat|fix|chore}/se-XXXX-short-slug` 
 
 Always use the /create-pr skill when creating pull requests. Never mark a pull request ready for review without my explicit approval. Open PRs as drafts and leave them as drafts. Completed work, green CI, and a clean self-review are not permission to mark it ready. Only an explicit instruction from me in the current conversation is. If you believe a PR is ready, say so and let me flip it myself.
 
-Comment with `@codex review` after creating the draft pull request to trigger a code review.
+Comment with `@codex review` after creating the draft pull request to trigger a code review. Trigger additional code reviews on the same pull request only when significant changes are made.
+
+After creating the draft pull request and requesting a code review, run the /babysit skill to monitor CI and review feedback until the skill's stop condition is met.
 
 ## Conventional Commits
 

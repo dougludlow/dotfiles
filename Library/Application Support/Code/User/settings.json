@@ -22,13 +22,13 @@
 		"prisma.config.ts": "prisma-*.config.ts",
 		"settings.json": "settings.*.json",
 		"tsconfig.json": "tsconfig.*.json",
-		"vite.config.ts": "vitest.setup.ts",
+		"vite.config.ts": "vitest.setup.ts"
 	},
 
 	"workbench.colorTheme": "Night Owl",
 	"workbench.editor.empty.hint": "hidden",
 	"workbench.editorAssociations": {
-		"git-rebase-todo": "default",
+		"git-rebase-todo": "default"
 	},
 	"workbench.panel.defaultLocation": "right",
 	"workbench.secondarySideBar.defaultVisibility": "hidden",
@@ -40,7 +40,7 @@
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": "explicit",
+		"source.fixAll.eslint": "explicit"
 	},
 	"editor.guides.bracketPairs": true,
 	"editor.bracketPairColorization.enabled": true,
@@ -78,60 +78,60 @@
 
 	"[csharp]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.insertSpaces": false,
+		"editor.insertSpaces": false
 	},
 	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[javascript]": {
 		"editor.tabSize": 3,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[markdown]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[ruby]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[typescript]": {
 		"editor.tabSize": 3,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[typescriptreact]": {
 		"editor.tabSize": 3,
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[yaml]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[snowflake-sql]": {
 		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[shellscript]": {
 		"editor.defaultFormatter": "foxundermoon.shell-format",
-		"editor.tabSize": 2,
+		"editor.tabSize": 2
 	},
 	"[sql]": {
-		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc",
+		"editor.defaultFormatter": "ReneSaarsoo.sql-formatter-vsc"
 	},
 	"[xml]": {
-		"editor.defaultFormatter": "redhat.vscode-xml",
+		"editor.defaultFormatter": "redhat.vscode-xml"
 	},
 
 	"aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
 	"aws.telemetry": false,
 	"aws.experiments": {
-		"CodeWhisperer": false,
+		"CodeWhisperer": false
 	},
 
 	"datadog.staticAnalysis.notification.suppressOnboarding": true,
@@ -139,6 +139,5 @@
 	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
 	"security.promptForLocalFileProtocolHandling": false,
 	"gitlens.launchpad.indicator.enabled": false,
-	"snowflake.autoLoginOnActivation.enabled": false,
-	"diffEditor.hideUnchangedRegions.enabled": true,
+	"snowflake.autoLoginOnActivation.enabled": false
 }

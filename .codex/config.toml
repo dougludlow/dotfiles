@@ -8,16 +8,6 @@ service_tier = "default"
 
 notify = ["/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
 
-# --- Headroom persistent provider ---
-model_provider = "headroom"
-openai_base_url = "http://127.0.0.1:8787/v1"
-
-[model_providers.headroom]
-name = "Headroom persistent proxy"
-base_url = "http://127.0.0.1:8787/v1"
-supports_websockets = true
-requires_openai_auth = true
-# --- end Headroom persistent provider ---
 
 [agents]
 max_depth = 1
@@ -135,6 +125,7 @@ args = ["--connection", "470f965f-317d-47e2-a1ea-7c5679217bb7"]
 [mcp_servers.workpane_production_main]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
 args = ["--connection", "f47be385-57f3-4439-8431-b9f4b974a10c"]
+enabled = true
 
 [mcp_servers.workpane_production_snowflake]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
@@ -182,8 +173,8 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.1016.51333"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1016.51333/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.1016.62342"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1016.62342/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
@@ -299,12 +290,6 @@ skill = "#3b82f6"
 
 [desktop.open-in-target-preferences]
 global = "vscode"
-
-[desktop.open-in-target-preferences.perPath]
-"/Users/doug.ludlow/.codex/worktrees/40f9/swell-platform" = "vscode"
-"/Users/doug.ludlow/.codex/worktrees/e66c/swell-platform" = "vscode"
-"/Users/doug.ludlow/.codex/worktrees/10c6/swell-platform" = "vscode"
-"/Users/doug.ludlow/.codex/worktrees/8bac/swell-platform" = "vscode"
 
 [shell_environment_policy.set]
 TMPDIR = "/private/tmp"

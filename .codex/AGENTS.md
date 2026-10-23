@@ -17,3 +17,7 @@ After creating the draft pull request and requesting a code review, run the /bab
 ## Conventional Commits
 
 Use Conventional Commits for git commits: `type(scope): imperative subject`, subject <= 72 characters, no trailing period. Types: feat, fix, refactor, test, docs, chore, revert. Scope is required unless the change is genuinely repo-wide. When a Linear ticket applies, append the id to the subject, e.g. `fix(integrations): clear stale enterprise ids (SE-1816)`.
+
+## Research and documentation output
+
+Return research, explanations, suggestions, and plans in chat unless I explicitly request a saved artifact. Do not create repository documentation merely because a skill requires saving its output. This preference overrides skill instructions about output location.

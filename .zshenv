@@ -20,9 +20,8 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
 	nvm use --silent >/dev/null 2>&1 || nvm use --silent default >/dev/null 2>&1 || true
 fi
 
-# Ensure pnpm works in both login and non-login zsh shells.
+# Child processes (including Bash setup scripts) need an executable, not a
+# shell function. Enable the shim when the selected Node installation lacks it.
 if ! command -v pnpm >/dev/null 2>&1 && command -v corepack >/dev/null 2>&1; then
-  pnpm() {
-    corepack pnpm "$@"
-  }
+  corepack enable pnpm
 fi

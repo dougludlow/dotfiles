@@ -139,5 +139,6 @@
 	"snowflake.connectionsConfigFile": "/Users/doug.ludlow/.snowflake/connections.toml",
 	"security.promptForLocalFileProtocolHandling": false,
 	"gitlens.launchpad.indicator.enabled": false,
-	"snowflake.autoLoginOnActivation.enabled": false
+	"snowflake.autoLoginOnActivation.enabled": false,
+	"githubPullRequests.pullRequestDescription": "Copilot"
 }

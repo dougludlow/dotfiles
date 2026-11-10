@@ -14,6 +14,10 @@
         no-upgrade: true
         stdout: true
         stderr: true
+    - shell:
+        - command: ./install-aspace.sh
+          stdout: true
+          stderr: true
 
 - clean:
     - "~"
@@ -42,6 +46,9 @@
     ~/.config/zed/settings.json: .config/zed/settings.json
     ~/.editorconfig: .editorconfig
     ~/.gitconfig: .gitconfig
+    ~/.hammerspoon/init.lua: .hammerspoon/init.lua
+    ~/.hammerspoon/kvm.lua: .hammerspoon/kvm.lua
+    ~/.hammerspoon/kvm-config.json: .hammerspoon/kvm-config.json
     ~/.oh-my-zsh/custom/aliases.zsh: .oh-my-zsh/custom/aliases.zsh
     ~/.oh-my-zsh/custom/plugins/nx-completion: .oh-my-zsh/custom/plugins/nx-completion/
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: .oh-my-zsh/custom/plugins/zsh-autosuggestions/

@@ -110,6 +110,8 @@ cask "font-roboto-mono-nerd-font"
 cask "gimp"
 # Web browser
 cask "google-chrome"
+# Desktop automation for automatic KVM display switching
+cask "hammerspoon"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # App to manage software development and track bugs

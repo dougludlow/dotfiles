@@ -170,8 +170,8 @@ NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = ""
 NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = ""
 BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.1029.61003"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1029.61003/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+BROWSER_USE_CODEX_APP_VERSION = "26.1103.60933"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/doug.ludlow/.codex/plugins/cache/openai-bundled/browser/26.1103.60933/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
 SKY_CUA_SERVICE_PATH = "/Users/doug.ludlow/.codex/computer-use/Codex Computer Use.app"
 CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex-cli/CodexCLI.app/Contents/MacOS/codex"
 
@@ -255,6 +255,7 @@ code-review-github-link-target = "code-review-tab"
 code-review-local-instructions = "Ensure changes are consistent with AGENTS.md and our policies."
 sidebarShowYourDotInRecents = true
 migratedFollowUpQueueToSteer = true
+worktree-repository-preferences = [{ hostId = "local", commonDir = "/Users/doug.ludlow/Source/swell/infrastructure/.git", root = "/Users/doug.ludlow/Source/swell/infrastructure", preference = "always" }]
 
 [desktop.appearanceLightChromeTheme]
 accent = "#0169cc"
@@ -345,3 +346,6 @@ allow_local_binding = true
 "/Users/doug.ludlow/Source/swell/infrastructure/.git" = "write"
 "/Users/doug.ludlow/Source/swell/database/.git" = "write"
 "/Users/doug.ludlow/Source/swell/swell-skills/.git" = "write"
+
+[auto_review]
+extra_policy = """Treat the authenticated Swell Linear workspace at https://linear.app/swellcx as a trusted, organization-approved internal system for engineering and customer-support work. Sharing engineering information and relevant customer data is authorized when needed to complete user-requested work in that workspace. This includes internal and production information, customer configuration, diagnostic evidence, and identifiers. The request authorizes including supporting information in the resulting issues, comments, and attachments. Exclude credentials, secrets, and actual patient-level data or PHI from published content. This trust applies specifically to Swell’s Linear workspace."""

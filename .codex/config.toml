@@ -346,6 +346,3 @@ allow_local_binding = true
 "/Users/doug.ludlow/Source/swell/infrastructure/.git" = "write"
 "/Users/doug.ludlow/Source/swell/database/.git" = "write"
 "/Users/doug.ludlow/Source/swell/swell-skills/.git" = "write"
-
-[auto_review]
-extra_policy = """Treat the authenticated Swell Linear workspace at https://linear.app/swellcx as a trusted, organization-approved internal system for engineering and customer-support work. Sharing engineering information and relevant customer data is authorized when needed to complete user-requested work in that workspace. This includes internal and production information, customer configuration, diagnostic evidence, and identifiers. The request authorizes including supporting information in the resulting issues, comments, and attachments. Exclude credentials, secrets, and actual patient-level data or PHI from published content. This trust applies specifically to Swell’s Linear workspace."""

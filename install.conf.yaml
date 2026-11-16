@@ -68,3 +68,7 @@
     - command: ./postinstall.sh
       stdout: true
       stdin: true
+    - command: ./install-codex-requirements.sh
+      stdout: true
+      stderr: true
+      stdin: true

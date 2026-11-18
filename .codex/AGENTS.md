@@ -8,7 +8,9 @@ Always use a descriptive git branch name: `{feat|fix|chore}/se-XXXX-short-slug` 
 
 ## Pull Requests
 
-Always use the /create-pr skill when creating pull requests. Never mark a pull request ready for review without my explicit approval. Open PRs as drafts and leave them as drafts. Completed work, green CI, and a clean self-review are not permission to mark it ready. Only an explicit instruction from me in the current conversation is. If you believe a PR is ready, say so and let me flip it myself.
+Always use the `$create-pr` skill when creating pull requests. Use Conventional Commits for PR titles. Open PRs as drafts and leave them as drafts. Completed work, green CI, and a clean self-review are not permission to mark it ready. My personal review is required before marking a PR as ready and I will do that myself.
+
+After creating or updating a pull request, attach it to the current Codex chat and verify the attachment before finishing.
 
 Comment with `@codex review` after creating the draft pull request to trigger a code review. Trigger additional code reviews on the same pull request only when significant changes are made.
 

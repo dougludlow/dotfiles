@@ -47,6 +47,120 @@
 		],
 		"defaultMode": "auto"
 	},
+	"hooks": {
+		"Notification": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"PermissionRequest": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"PostToolUse": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"PreToolUse": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"SessionEnd": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"SessionStart": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"Stop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"StopFailure": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"SubagentStop": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		],
+		"UserPromptSubmit": [
+			{
+				"hooks": [
+					{
+						"type": "command",
+						"command": "\"/Users/doug.ludlow/.config/iterm2/it2\" handle-agent-hook"
+					}
+				]
+			}
+		]
+	},
+	"tui": "fullscreen",
 	"theme": "auto",
-	"skipAutoPermissionPrompt": true
+	"skipAutoPermissionPrompt": true,
+	"extraKnownMarketplaces": {
+		"openai-codex": {
+			"source": {
+				"source": "github",
+				"repo": "openai/codex-plugin-cc"
+			}
+		}
+	},
+	"enabledPlugins": {
+		"codex@openai-codex": true
+	}
 }

@@ -114,20 +114,17 @@ url = "http://127.0.0.1:19902/mcp"
 http_headers_helper = "/Users/doug.ludlow/.local/share/opensearch-mcp/.venv/bin/python /Users/doug.ludlow/.local/share/opensearch-mcp/http-headers.py nonprod"
 
 [mcp_servers.workpane_local_main]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "ce2fb4a6-7e51-4fad-89e6-6bac4c147ce3"]
+url = "http://127.0.0.1:8000/mcp"
 
 [mcp_servers.workpane_local_snowflake]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
 args = ["--connection", "bd9da37e-8f86-494b-8a1b-d957e90a0baf"]
 
 [mcp_servers.workpane_local_survey]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "470f965f-317d-47e2-a1ea-7c5679217bb7"]
+url = "http://127.0.0.1:8002/mcp"
 
 [mcp_servers.workpane_production_main]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "f47be385-57f3-4439-8431-b9f4b974a10c"]
+url = "http://127.0.0.1:8020/mcp"
 enabled = true
 
 [mcp_servers.workpane_production_snowflake]
@@ -136,20 +133,17 @@ args = ["--connection", "cf1833bc-ccd6-42e8-b64b-b1477d5a628f"]
 enabled = true
 
 [mcp_servers.workpane_production_survey]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "74d393ee-92dd-42a2-b8c1-b5036dbc2ac6"]
+url = "http://127.0.0.1:8022/mcp"
 
 [mcp_servers.workpane_sandbox_main]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "8e2ea67b-7d90-4b2a-a9cd-ed388aed8314"]
+url = "http://127.0.0.1:8010/mcp"
 
 [mcp_servers.workpane_sandbox_snowflake]
 command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
 args = ["--connection", "b7f21f5e-bdde-4547-9bf9-d290efd56121"]
 
 [mcp_servers.workpane_sandbox_survey]
-command = "/Applications/WorkPane.app/Contents/MacOS/workpane-bridge"
-args = ["--connection", "400deeb0-88f0-46d8-a64e-a300dc1c6cce"]
+url = "http://127.0.0.1:8012/mcp"
 enabled = true
 
 [mcp_servers.computer-use]

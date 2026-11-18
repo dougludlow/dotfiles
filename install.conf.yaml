@@ -36,10 +36,12 @@
 
 - link:
     ~/.bashrc: .bashrc
+    ~/.agents/.skill-lock.json: .agents/skill-lock.json
+    ~/.claude/CLAUDE.md: .agents/AGENTS.md
     ~/.claude/skills: ~/.agents/skills
     ~/.claude/settings.json: .claude/settings.json
     ~/.copilot/settings.json: .copilot/settings.json
-    ~/.codex/AGENTS.md: .codex/AGENTS.md
+    ~/.codex/AGENTS.md: .agents/AGENTS.md
     ~/.codex/config.toml: .codex/config.toml
     ~/.codex/rules: .codex/rules
     ~/.config/direnv/config.toml: .config/direnv/config.toml
@@ -68,6 +70,9 @@
     - command: ./postinstall.sh
       stdout: true
       stdin: true
+    - command: ./link-agent-skills.sh
+      stdout: true
+      stderr: true
     - command: ./install-codex-requirements.sh
       stdout: true
       stderr: true
